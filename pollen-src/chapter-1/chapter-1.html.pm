@@ -1,5 +1,4 @@
 #lang pollen
 
-◊h1{Chapter 1}
+◊h1{Chapter 1–Getting started}
 
-aoeuauaeu
