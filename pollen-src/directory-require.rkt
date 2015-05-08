@@ -10,5 +10,7 @@
      #:string-proc (compose smart-quotes smart-dashes))))
 
 (require pollen/tag)
-(define (link url text) `(a [[href ,url]] ,text))
-(define (figure url text) `(img [[src, url] [alt, text]]))
+(define headline (make-default-tag-function 'h1))
+(define (section anchor text) `(h2 [[id, anchor]], text))
+(define (link url text) `(a [[href, url]], text))
+(define (figure url text) `(figure (img [[src, url] [alt, text]]) (figurecaption [], text) ) )

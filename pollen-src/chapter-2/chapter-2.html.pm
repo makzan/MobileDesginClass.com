@@ -1,3 +1,3 @@
 #lang pollen
 
-◊h1{Chapter 2}
+◊headline{Chapter 2}

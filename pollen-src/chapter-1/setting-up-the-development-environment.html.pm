@@ -1,6 +1,6 @@
 #lang pollen
 
-◊h1{Setting up the development environment}
+◊headline{Setting up the development environment}
 
 How can we get started?
 
@@ -8,4 +8,7 @@ We need to install some softwares. We need web browsers to run the web. We’ll 
 
 Just the browsers? How about the editor?
 
+◊sidenote{There are free alternatives: Bracket, Atom.io, or online IDE such as c9.io and Nitrous.}
+
 Any plain text code editor would work. IDE such as Dreamweaver may be used but they are not required. For me, I would use Sublime Text because of the multiple-cursors feature.
+

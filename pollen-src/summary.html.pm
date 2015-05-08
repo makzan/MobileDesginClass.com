@@ -1,3 +1,3 @@
 #lang pollen
 
-◊h1{Summary}
+◊headline{Summary}

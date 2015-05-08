@@ -10,3 +10,83 @@ body {
 img {
   max-width: 100%;
 }
+
+
+/* Layout */
+
+article {
+  margin: 0 auto;
+
+  font-size: 16pt;
+  font-family: Georgia, serif;
+}
+h1, h2, h3, h4 {
+  font-family: "Gill Sans", Arial, sans-serif;
+  font-size: 1em;
+}
+h1 {
+  font-size: 1.5em;
+  border-top: 3px solid BLACK;
+  line-height: 2em;
+}
+
+
+sidenote {
+  display: block;
+
+  font-size: 0.7em;
+  font-family: monospace;
+}
+
+@media screen and (min-width: 900px) {
+
+  article {
+    max-width: 800px;
+    margin-left: 300px;
+  }
+
+  sidenote {
+    margin-left: -300px;
+    width: 280px;
+    position: absolute;
+  }
+
+}
+
+
+/* Nav */
+nav {
+  display: flex;
+  border-top: 1px solid LIGHTGRAY;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 2vw;
+}
+nav > a,
+nav > a:visited{
+  display: block;
+  flex: 1;
+  line-height: 1.5em;
+  padding: 1em;
+  color: BLACK;
+  text-decoration: none;
+  text-decoration-skip: ink;
+}
+nav > a:hover {
+  background: ALICEBLUE;
+  text-decoration: underline;
+}
+nav > a:nth-child(1) {
+  text-align: right;
+}
+nav > a:nth-child(2) {
+  text-align: left;
+  border-left: 1px solid LIGHTGRAY;
+}
+
+
+/*@media screen and (min-width: 900px) {*/
+/*  nav {*/
+/*    font-size: 1em;*/
+/*  }*/
+/*}*/
