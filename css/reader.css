@@ -88,15 +88,16 @@ nav > a:last-child {
 
 /* Overlay Nav */
 .overlay {
-  width: 5%;
+  width: 10%;
   height: 100%;
   position: absolute;
   top: 0;
   display: block;
+  -webkit-tap-highlight-color: rgba(20,20,20,1);
 }
 .overlay.prev {
-  right: 0;
+  left: 0;
 }
 .overlay.next {
-  left: 0;
+  right: 0;
 }

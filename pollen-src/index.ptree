@@ -2,12 +2,11 @@
 
 index.html
 toc.html
-◊chapter-0/index.html{
-  chapter-0/overview.html
-}
+chapter-0/index.html
 ◊chapter-1/index.html{
   chapter-1/setting-up-the-development-environment.html
   chapter-1/testing-environment.html
+  chapter-1/where-to-reference-documentations.html
 }
 ◊chapter-2/index.html{
   chapter-2/document-title.html
