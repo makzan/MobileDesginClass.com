@@ -11,6 +11,8 @@
 
 (require pollen/tag)
 (define headline (make-default-tag-function 'h1))
+(define list (make-default-tag-function 'ul))
+(define item (make-default-tag-function 'li))
 (define (section anchor text) `(h2 [[id, anchor]], text))
 (define (link url text) `(a [[href, url]], text))
 (define (figure url text) `(figure (img [[src, url] [alt, text]]) (figurecaption [], text) ) )

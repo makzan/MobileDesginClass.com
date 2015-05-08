@@ -10,5 +10,7 @@ toc.html
   chapter-1/testing-environment.html
 }
 ◊chapter-2/chapter-2.html{
+  chapter-2/document-title.html
+  chapter-2/content-strategy.html
 }
 summary.html
