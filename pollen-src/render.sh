@@ -21,4 +21,5 @@ mv ../build-tmp/template.html ./
 
 rsync -r ../build-tmp/ ../
 
-rm -rf ../build-tmp
+rm -rf ../history-$(date +%F)
+mv ../build-tmp ../history-$(date +%F)
