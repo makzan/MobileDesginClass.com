@@ -15,7 +15,6 @@ img {
 /* Layout */
 
 article {
-  margin: 0 auto;
 
   font-size: 16pt;
   font-family: Georgia, serif;
@@ -41,7 +40,7 @@ sidenote {
 @media screen and (min-width: 900px) {
 
   article {
-    max-width: 800px;
+    max-width: 700px;
     margin-left: 300px;
   }
 
@@ -58,8 +57,7 @@ sidenote {
 nav {
   display: flex;
   border-top: 1px solid LIGHTGRAY;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1000px;
   font-size: 2vw;
 }
 nav > a,
