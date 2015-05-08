@@ -8,32 +8,45 @@
 </head>
 <body>
 
-  <article>
-    ◊->html[doc]
-  </article>
+  <main id="main">
 
-  <nav>
-    ◊(define prev-page (previous here))
-    ◊when/block[prev-page]{
-    <a id="prev" href="/◊|prev-page|">← ◊(select 'h1 prev-page)</a>}
+    <article>
+      ◊->html[doc]
+    </article>
 
-    ◊(define root-page (parent here))
-    ◊when/block[(equal? 'pagetree-root root-page)]{
-    <a id="top" href="/">Home</a>}
+    <nav>
+      ◊(define prev-page (previous here))
+      ◊when/block[prev-page]{
+      <a id="prev" href="/◊|prev-page|">← ◊(select 'h1 prev-page)</a>
+      <a id="top" href="/">Home</a>}
 
-    ◊(define parent-page (parent here))
-    ◊when/block[(not (equal? 'pagetree-root parent-page))]{
-    <a id="chapter" href="/◊|parent-page|">◊(select 'h1 parent-page)</a>}
+      ◊(define parent-page (parent here))
+      ◊when/block[(not (equal? 'pagetree-root parent-page))]{
+      <a id="chapter" href="/◊|parent-page|">◊(select 'h1 parent-page)</a>}
 
-    ◊(define next-page (next here))
-    ◊when/block[next-page]{
-    <a id="next" href="/◊|next-page|">◊(select 'h1 next-page) →</a>}
-  </nav>
+      ◊(define next-page (next here))
+      ◊when/block[next-page]{
+      <a id="next" href="/◊|next-page|">◊(select 'h1 next-page) →</a>}
+    </nav>
+
+  </main>
 
 
   <small>by ◊|author|.</small>
   <!-- © 2015 Thomas Seng Hin Mak. -->
 
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="/js/smoothstate.js"></script>
+  <script>
+    ;(function($) {
+      $(function(){
+        $('#main').smoothState({
+          prefetch: true,
+          pageCacheSize: 0,
+        });
+      });
+    })(jQuery);
+  </script>
 </body>
 </html>

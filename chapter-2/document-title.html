@@ -8,24 +8,39 @@
 </head>
 <body>
 
-  <article>
-    <root><h1>Document title</h1><p>First thing is the title of the document. Title of the document is used in the following places:</p><ul><li>Home screen</li><br /><li>Bookmark</li><br /><li>History log</li><br /><li>Tab</li><br /><li>Back button in browser</li><br /><li>Social network</li></ul><p>The following is the screen of sharing a webpage on Facebook. Facebook fetches the document title when it is shared.</p><figure><img src="http://makzan.net/assets/mobile-web-design/fb-sharing-6d9154db003a1668e3130cb407dd988d.png" alt="Document title appears in the facebook sharing box." /><figurecaption>Document title appears in the facebook sharing box.</figurecaption></figure><p>This screenshot shows how confuse it is when every page shares the same document title.</p><figure><img src="http://makzan.net/assets/mobile-web-design/macao-gov-history-dca0a7b80f9f6bd8b0edfadfa7c3c49c.png" alt="Same document title on every page" /><figurecaption>Same document title on every page</figurecaption></figure><p>The following screenshot, on the other hand, shows the website with corresponding title set for each page.</p><figure><img src="http://makzan.net/assets/mobile-web-design/makzan-net-history-e95b6f2bf8146faa685b4230819b5eb2.png" alt="Different document title for each page" /><figurecaption>Different document title for each page</figurecaption></figure></root>
-  </article>
+  <main id="main">
 
-  <nav>
-    <a id="prev" href="/chapter-2/index.html">← Chapter 2</a>
+    <article>
+      <root><h1>Document title</h1><p>First thing is the title of the document. Title of the document is used in the following places:</p><ul><li>Home screen</li><br /><li>Bookmark</li><br /><li>History log</li><br /><li>Tab</li><br /><li>Back button in browser</li><br /><li>Social network</li></ul><p>The following is the screen of sharing a webpage on Facebook. Facebook fetches the document title when it is shared.</p><figure><img src="http://makzan.net/assets/mobile-web-design/fb-sharing-6d9154db003a1668e3130cb407dd988d.png" alt="Document title appears in the facebook sharing box." /><figurecaption>Document title appears in the facebook sharing box.</figurecaption></figure><p>This screenshot shows how confuse it is when every page shares the same document title.</p><figure><img src="http://makzan.net/assets/mobile-web-design/macao-gov-history-dca0a7b80f9f6bd8b0edfadfa7c3c49c.png" alt="Same document title on every page" /><figurecaption>Same document title on every page</figurecaption></figure><p>The following screenshot, on the other hand, shows the website with corresponding title set for each page.</p><figure><img src="http://makzan.net/assets/mobile-web-design/makzan-net-history-e95b6f2bf8146faa685b4230819b5eb2.png" alt="Different document title for each page" /><figurecaption>Different document title for each page</figurecaption></figure></root>
+    </article>
 
+    <nav>
+      <a id="prev" href="/chapter-2/index.html">← Chapter 2</a>
+<a id="top" href="/">Home</a>
 
+      <a id="chapter" href="/chapter-2/index.html">Chapter 2</a>
 
-    <a id="chapter" href="/chapter-2/index.html">Chapter 2</a>
+      <a id="next" href="/chapter-2/content-strategy.html">Content strategy →</a>
+    </nav>
 
-    <a id="next" href="/chapter-2/content-strategy.html">Content strategy →</a>
-  </nav>
+  </main>
 
 
   <small>by Makzan.</small>
   <!-- © 2015 Thomas Seng Hin Mak. -->
 
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="/js/smoothstate.js"></script>
+  <script>
+    ;(function($) {
+      $(function(){
+        $('#main').smoothState({
+          prefetch: true,
+          pageCacheSize: 0,
+        });
+      });
+    })(jQuery);
+  </script>
 </body>
 </html>

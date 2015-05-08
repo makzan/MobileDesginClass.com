@@ -8,24 +8,39 @@
 </head>
 <body>
 
-  <article>
-    <root><h1>Chapter 0</h1></root>
-  </article>
+  <main id="main">
 
-  <nav>
-    <a id="prev" href="/toc.html">← TOC</a>
+    <article>
+      <root><h1>Chapter 0</h1></root>
+    </article>
 
-    <a id="top" href="/">Home</a>
+    <nav>
+      <a id="prev" href="/toc.html">← TOC</a>
+<a id="top" href="/">Home</a>
 
 
 
-    <a id="next" href="/chapter-0/overview.html">Overview →</a>
-  </nav>
+      <a id="next" href="/chapter-0/overview.html">Overview →</a>
+    </nav>
+
+  </main>
 
 
   <small>by Makzan.</small>
   <!-- © 2015 Thomas Seng Hin Mak. -->
 
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="/js/smoothstate.js"></script>
+  <script>
+    ;(function($) {
+      $(function(){
+        $('#main').smoothState({
+          prefetch: true,
+          pageCacheSize: 0,
+        });
+      });
+    })(jQuery);
+  </script>
 </body>
 </html>
