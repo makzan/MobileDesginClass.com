@@ -10,6 +10,8 @@
 (define (section anchor text) `(h2 [[id, anchor]], text))
 (define (link url text) `(a [[href, url]], text))
 (define (figure url text) `(figure (img [[src, url] [alt, text]]) (figurecaption [], text) ) )
+
+(define toclist (make-default-tag-function 'ol))
 (define (tocitem url text) `(li  (a [[href, url]], text) ) )
 
 

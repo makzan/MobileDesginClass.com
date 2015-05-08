@@ -2,14 +2,14 @@
 
 index.html
 toc.html
-◊chapter-0/chapter-0.html{
+◊chapter-0/index.html{
   chapter-0/overview.html
 }
-◊chapter-1/chapter-1.html{
+◊chapter-1/index.html{
   chapter-1/setting-up-the-development-environment.html
   chapter-1/testing-environment.html
 }
-◊chapter-2/chapter-2.html{
+◊chapter-2/index.html{
   chapter-2/document-title.html
   chapter-2/content-strategy.html
 }

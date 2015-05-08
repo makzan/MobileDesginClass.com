@@ -17,6 +17,14 @@
     ◊when/block[prev-page]{
     <a id="prev" href="/◊|prev-page|">← ◊(select 'h1 prev-page)</a>}
 
+    ◊(define root-page (parent here))
+    ◊when/block[(equal? 'pagetree-root root-page)]{
+    <a id="top" href="/">Home</a>}
+
+    ◊(define parent-page (parent here))
+    ◊when/block[(not (equal? 'pagetree-root parent-page))]{
+    <a id="chapter" href="/◊|parent-page|">◊(select 'h1 parent-page)</a>}
+
     ◊(define next-page (next here))
     ◊when/block[next-page]{
     <a id="next" href="/◊|next-page|">◊(select 'h1 next-page) →</a>}
