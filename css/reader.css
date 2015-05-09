@@ -30,21 +30,23 @@ h1 {
 }
 
 
-sidenote {
+sidenote,
+aside {
   display: block;
 
   font-size: 0.7em;
   font-family: monospace;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 760px) {
 
   article {
     max-width: 700px;
     margin-left: 300px;
   }
 
-  sidenote {
+  sidenote,
+  aside{
     margin-left: -300px;
     width: 280px;
     position: absolute;
@@ -58,7 +60,7 @@ nav {
   display: flex;
   border-top: 1px solid LIGHTGRAY;
   max-width: 1000px;
-  font-size: 2vw;
+  font-size: 0.8em;
 }
 nav > a,
 nav > a:visited{
