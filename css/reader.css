@@ -49,14 +49,14 @@ aside {
 @media screen and (min-width: 760px) {
 
   article {
-    max-width: 700px;
-    margin-left: 300px;
+    max-width: 720px;
+    margin-left: 270px;
   }
 
   sidenote,
   aside{
-    margin-left: -300px;
-    width: 280px;
+    margin-left: -270px;
+    width: 260px;
     position: absolute;
     text-align: right;
     color: BLACK;
