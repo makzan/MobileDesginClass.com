@@ -2,14 +2,18 @@
 
 index.html
 toc.html
-chapter-0/index.html
-◊chapter-1/index.html{
-  chapter-1/setting-up-the-development-environment.html
-  chapter-1/testing-environment.html
-  chapter-1/where-to-reference-documentations.html
+◊ios-app/index.html{
+  ios-app/toc.html
+  ios-app/example-1/index.html
 }
-◊chapter-2/index.html{
-  chapter-2/document-title.html
-  chapter-2/content-strategy.html
+◊mobile-web/index.html{
+  ◊mobile-web/chapter-1/index.html{
+    mobile-web/chapter-1/setting-up-the-development-environment.html
+    mobile-web/chapter-1/testing-environment.html
+  }
+  ◊mobile-web/chapter-2/index.html{
+    mobile-web/chapter-2/document-title.html
+    mobile-web/chapter-2/content-strategy.html
+  }
 }
 summary.html
