@@ -1,7 +1,6 @@
 #lang pollen
 
 index.html
-toc.html
 ◊ios-app/index.html{
   ios-app/toc.html
   ios-app/example-1/index.html
