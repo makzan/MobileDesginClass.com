@@ -116,4 +116,8 @@ nav > a:last-child {
 
 
 /* Code block */
-
+pre {
+  font-size: 12pt;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}

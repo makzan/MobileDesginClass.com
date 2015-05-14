@@ -4,6 +4,8 @@ index.html
 ◊ios-app/index.html{
   ios-app/toc.html
   ios-app/example-1.html
+  ios-app/pull-to-refresh.html
+  ios-app/pragma-mark.html
   ios-app/summary.html
 }
 ◊mobile-web/index.html{
