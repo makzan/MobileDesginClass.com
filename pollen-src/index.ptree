@@ -3,7 +3,8 @@
 index.html
 ◊ios-app/index.html{
   ios-app/toc.html
-  ios-app/example-1/index.html
+  ios-app/example-1.html
+  ios-app/summary.html
 }
 ◊mobile-web/index.html{
   ◊mobile-web/chapter-1/index.html{

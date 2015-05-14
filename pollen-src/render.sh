@@ -1,5 +1,7 @@
 find ./ -type d -print0 | xargs -0 -iD cp directory-require.rkt D
 
+rm pollen.cache
+
 raco pollen render index.ptree
 
 mkdir ../build-tmp/

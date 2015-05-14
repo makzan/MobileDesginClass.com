@@ -17,8 +17,16 @@
 (define toclist (make-default-tag-function 'ol))
 (define (tocitem url text) `(li  (a [[href, url]], text) ) )
 
+(define (objc . text) `(pre (code [[class, "language-objectivec"]],@ text)))
+(define (swift . text) `(pre (code [[class, "language-swift"]],@ text)))
+; (define objc (make-default-tag-function 'pre))
+; (define swift (make-default-tag-function 'pre))
+(define (ioscode code1 code2) `(div (div (a [[data-lang, "objc"]], "Obj-C") (a [[data-lang, "swift"]], "Swift")), code1 , code2) )
+
+
 
 (require pollen/decode txexpr)
+(register-block-tag 'code)
 (define (root . elements)
    (make-txexpr 'root null (decode-elements elements
      #:txexpr-elements-proc detect-paragraphs

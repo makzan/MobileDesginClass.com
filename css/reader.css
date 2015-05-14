@@ -59,7 +59,7 @@ aside {
     width: 260px;
     position: absolute;
     text-align: right;
-    color: BLACK;
+    color: GRAY;
   }
 
 }
@@ -113,3 +113,7 @@ nav > a:last-child {
 .overlay.next {
   right: 0;
 }
+
+
+/* Code block */
+
