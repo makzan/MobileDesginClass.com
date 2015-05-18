@@ -15,7 +15,7 @@ img {
 /* Layout */
 
 article {
-  font-size: 16pt;
+  font-size: 17pt;
   font-family: "adobe-caslon-pro", Georgia, serif;
   letter-spacing: -0.02em;
   font-weight: 400;
@@ -45,6 +45,9 @@ aside {
   padding: 0 1em 1em 1em;
   color: GRAY;
 }
+aside figcaption {
+  text-align: right;
+}
 
 @media screen and (min-width: 760px) {
 
@@ -62,6 +65,17 @@ aside {
     color: GRAY;
   }
 
+}
+
+/* Section heading */
+h2 a,
+h2 a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+h2 a:hover {
+  text-decoration: underline;
 }
 
 
@@ -120,4 +134,51 @@ pre {
   font-size: 12pt;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+
+/* visibile toggle */
+.out {
+  opacity: 0;
+  display: none;
+}
+.in {
+  opacity: 1;
+  display: block;
+}
+/* Image Viewer */
+img {
+  cursor: zoom-in;
+}
+#overlay > img {
+  cursor: zoom-out;
+  max-height: 100%;
+}
+#overlay {
+  background-color: rgba(255, 255, 255, 0.96);
+  cursor: zoom-out;
+  height: 100%;
+  left: 0;
+  line-height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+#overlay-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(252, 252, 252, 1);
+  color: #222;
+  padding: 0.5em;
+  border-top-right-radius: 3px;
+}
+/* end of overlay */
+
+
+/* Figure */
+figure {
+  text-align: center;
 }

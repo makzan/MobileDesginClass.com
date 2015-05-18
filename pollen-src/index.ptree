@@ -4,8 +4,14 @@ index.html
 ◊ios-app/index.html{
   ios-app/toc.html
   ios-app/example-1.html
-  ios-app/pull-to-refresh.html
   ios-app/pragma-mark.html
+  ◊ios-app/kitchen-timer/index.html{
+    ios-app/kitchen-timer/step1.html
+    ios-app/kitchen-timer/step2-auto-layout.html
+    ios-app/kitchen-timer/step3-local-notification.html
+  }
+  ios-app/pull-to-refresh.html
+  ios-app/apple-watch.html
   ios-app/summary.html
 }
 ◊mobile-web/index.html{
@@ -19,3 +25,7 @@ index.html
   }
 }
 summary.html
+◊logs/index.html{
+  logs/2015-05-18-ios-app.html
+  logs/2015-05-01-mobile-web-design.html
+}
