@@ -8,4 +8,5 @@ I believe both mobile app developers and traiditonal web designers need to learn
 
 ◊history{
 2015-05-01: First draft.
+2015-05-20: Added chapter 3 content.
 }

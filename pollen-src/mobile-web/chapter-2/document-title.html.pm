@@ -37,5 +37,3 @@ Imagine now your reader would like to go back several pages in the history. For 
 In this screenshot, on the other hand, shows the website with corresponding title set for each page. Every page has set a title that describes what the page is about. It also contains the site name so reader can easily identify these pages are from the same website when viewing them in the history log.
 
 
-[We need another paragraph here to explain and conclude this topic, We need another paragraph here to explain and conclude this topic. We need another paragraph here to explain and conclude this topic, We need another paragraph here to explain and conclude this topic. We need another paragraph here to explain and conclude this topic, We need another paragraph here to explain and conclude this topic. ]
-

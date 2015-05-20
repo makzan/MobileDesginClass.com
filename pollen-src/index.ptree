@@ -23,6 +23,22 @@ index.html
   ◊mobile-web/chapter-2/index.html{
     mobile-web/chapter-2/document-title.html
     mobile-web/chapter-2/content-strategy.html
+    mobile-web/chapter-2/content-structure.html
+    mobile-web/chapter-2/mobile-first-approach.html
+    mobile-web/chapter-2/sketching-mobile-web-design.html
+    mobile-web/chapter-2/minimal-mobile-friendly-website.html
+    mobile-web/chapter-2/list-view.html
+    mobile-web/chapter-2/do-mobile-web-has-to-be-website.html
+  }
+  ◊mobile-web/chapter-3/index.html{
+    mobile-web/chapter-3/trying-foundation-on-web-editor.html
+    mobile-web/chapter-3/setting-up-foundation.html
+    mobile-web/chapter-3/foundation-grid.html
+    mobile-web/chapter-3/centered-column.html
+    mobile-web/chapter-3/push-and-pull-column.html
+    mobile-web/chapter-3/block-grid.html
+    mobile-web/chapter-3/flex-video.html
+    mobile-web/chapter-3/interchangable-content.html
   }
 }
 summary.html

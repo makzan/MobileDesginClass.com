@@ -23,6 +23,7 @@ article > root > p:first-of-type:first-letter {
   margin: 0;
   padding: .37em .05em 0 0;
   color: CRIMSON;
+  font-style: normal;
 }
 
 @media screen and (min-width: 760px) {
@@ -191,12 +192,24 @@ nav > a:last-child {
 
 /* Overlay Nav */
 .overlay {
-  width: 10%;
+  width: 4%;
   height: 100%;
   position: fixed;
   top: 0;
   display: block;
   -webkit-tap-highlight-color: rgba(20,20,20,.2);
+  opacity: 0;
+
+  text-decoration: none;
+  line-height: 100vh;
+  text-align: center;
+  color: black;
+}
+.overlay:hover {
+  background: rgba(0,0,0,0.1);
+  opacity: 1;
+  text-decoration: none;
+  color: black;
 }
 .overlay.prev {
   left: 0;
@@ -308,4 +321,21 @@ footer a:visited {
 footer a:hover {
   color: CRIMSON;
   text-decoration: none;
+}
+
+
+/* iframe */
+iframe {
+  border: 0;
+  width: 100%;
+  min-height: 300px;
+}
+
+/* Compare block grid */
+.block-grid-2 {
+  display: flex;
+}
+.block-grid-2 > * {
+  flex: 1;
+  padding: 1em;
 }

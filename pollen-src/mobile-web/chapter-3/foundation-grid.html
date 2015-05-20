@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foundation grid | Modile Design Class</title>
+  <link rel="stylesheet" href="/css/prism.css">
+  <link rel="stylesheet" href="/css/reader.css">
+
+  <!-- Typekit -->
+  <script src="//use.typekit.net/lyx0zwz.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+  <main id="main">
+    <header>
+      <p>
+        <a id="chapter" href="/mobile-web/chapter-3/index.html">Chapter 3–Using Zurb foundation</a>
+
+
+      </p>
+      <p>
+        <a href='/'>Mobile Design Class</a>
+      </p>
+    </header>
+
+    <article>
+      <root><h1>Foundation grid</h1><p>Foundation uses row and columns approach for the layout.</p><aside><figure><img src="http://makzan.net/assets/mobile-web-design/row-column-grid-6113c4d65e2f9513a6603b7999c5adb4.png" alt="row-column-based layout." /><figcaption>row-column-based layout.</figcaption></figure></aside><p><strong>Rows</strong> are the space lay out from top to bottom.</p><p><strong>Columns</strong> are the space inside each row, lay out fro left to right.</p><p>If the content are meant to be inside the grid system, make sure we put the content inside column and columns inside row.</p><p>The columns order from left to right following the order of the divs by default. we may change the order by using push and pull classes where we will discuss very soon.</p><p>Here is a demo for the basic grid.</p><pre><code class="language-html">&lt;div class='row'&gt;<br />  &lt;div class='small-3 columns'&gt;Left Nav Bar&lt;/div&gt;<br />  &lt;div class='small-9 columns'&gt;Content&lt;/div&gt;<br />&lt;/div&gt;</code></pre><figure><img src="http://makzan.net/assets/mobile-web-design/grid-basic-wide-ea67aeb5f8c9a58dcde55d9189fd88dd.png" alt="Small grid expands to wide screen." /><figcaption>Small grid expands to wide screen.</figcaption></figure><figure><img src="http://makzan.net/assets/mobile-web-design/grid-basic-narrow-763e82ec1a73b0553c8c78f774d95c79.png" alt="Small grid for small screen." /><figcaption>Small grid for small screen.</figcaption></figure><p>After we add the medium columns setting, the propotional varies between small and medium screen.</p><pre><code class="language-html">&lt;div class='row'&gt;<br />  &lt;div class='small-6 medium-3 columns'&gt;Left Nav Bar&lt;/div&gt;<br />  &lt;div class='small-6 medium-9 columns'&gt;Content&lt;/div&gt;<br />&lt;/div&gt;</code></pre><figure><img src="http://makzan.net/assets/mobile-web-design/medium-grid-wide-1e064346710175bcfd2edd49a39d8c38.png" alt="Small grid expands to wide screen." /><figcaption>Small grid expands to wide screen.</figcaption></figure><figure><img src="http://makzan.net/assets/mobile-web-design/medium-grid-small-12bb8ad1a861a74d8b421582c141766e.png" alt="Small grid for small screen." /><figcaption>Small grid for small screen.</figcaption></figure><p><a href="http://jsfiddle.net/makzan/1ncwbwoa/">Open example in jsfiddle.</a></p><aside><figure><img src="http://makzan.net/assets/mobile-web-design/small-n-3a089deccd0465967a4b9c9a779d6d88.png" alt="Small, medium, large." /><figcaption>Small, medium, large.</figcaption></figure></aside><p>Foundation is mobile first. Zurb Foundation uses <code>small-N</code>, <code>medium-N</code> and <code>large-N</code> to define how many columns span for <em>small</em>, <em>medium</em> and <em>large</em> screen. But only the small one is required, medium and large one is optional.</p><p>When designing the grid in Zurb Foundation, we craft the grid for small screen first.</p><p>If the grid for small screen work in larger size (medium and large), we don’t need to do anything and it will expand to the larger width until reaching the max width.</p><p>If we think we should devide the row into different columns when the screen is at medium or large size, we can further use the <code>medium-N</code> and <code>large-N</code> column class to define them.</p><p>We can even provide different proportion for the various screen sizes.</p></root>
+    </article>
+
+    <nav>
+
+      <a id="prev" href="/mobile-web/chapter-3/setting-up-foundation.html">← Setting up Foundation</a>
+
+      <a id="next" href="/mobile-web/chapter-3/centered-column.html">Centered column →</a>
+    </nav>
+
+
+    <a href="/mobile-web/chapter-3/setting-up-foundation.html" title="← Setting up Foundation" class="overlay prev">←</a>
+
+    <a href="/mobile-web/chapter-3/centered-column.html" title="Centered column →" class="overlay next">→</a>
+
+
+  </main>
+
+  <footer>
+    <small><a href='/'>Mobile Design Class</a>. &copy; 2015 by Makzan. All rights reserved.</small>
+  </footer>
+
+  <div id='overlay' class='out'>
+    <img id='overlay-img' src=''>
+    <div id='overlay-caption'></div>
+  </div>
+
+  <!-- © 2015 Thomas Seng Hin Mak. -->
+
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="/js/smoothstate.js"></script>
+  <script src="/js/website.js"></script>
+
+</body>
+</html>

@@ -22,6 +22,13 @@
 
 (define (figure url text) `(figure (img [[src, url] [alt, text]]) (figcaption [], text) ) )
 
+(define (compare figure1 figure2) `(div [[class, "block-grid-2"]], figure1, figure2))
+
+(define (iframe url) `(iframe [[seamless, "seamless"] [src, url]]))
+
+(define (time-for-action text) `(h2 [[id, "time-for-action"]] (a [[href, "#time-for-action"]] (string-append "Time for Action—", text))))
+
+
 (define steps (make-default-tag-function 'ol))
 (define (step . content) `(li,@ content))
 
@@ -30,6 +37,8 @@
 
 (define (objc . text) `(pre (code [[class, "language-objectivec"]],@ text)))
 (define (swift . text) `(pre (code [[class, "language-swift"]],@ text)))
+(define (html . text) `(pre (code [[class, "language-html"]],@ text)))
+(define (css . text) `(pre (code [[class, "language-css"]],@ text)))
 
 (define (ioscode code1 code2) `(div (div (a [[data-lang, "objc"]], "Obj-C") (a [[data-lang, "swift"]], "Swift")), code1 , code2) )
 
@@ -40,4 +49,4 @@
 (define (root . elements)
    (make-txexpr 'root null (decode-elements elements
      #:txexpr-elements-proc detect-paragraphs
-     #:string-proc (compose smart-quotes smart-dashes))))
+     #:string-proc (compose smart-dashes))))

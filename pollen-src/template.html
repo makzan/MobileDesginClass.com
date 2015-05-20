@@ -21,6 +21,9 @@
       <p>
         ◊when/block[(not (equal? 'pagetree-root parent-page))]{
         <a id="chapter" href="/◊|parent-page|">◊(select 'h1 parent-page)</a>}
+
+        ◊when/block[(equal? 'pagetree-root parent-page)]{
+        <a id="chapter" href="/">Home</a>}
       </p>
       <p>
         <a href='/'>Mobile Design Class</a>
@@ -42,10 +45,10 @@
 
 
     ◊when/block[prev-page]{
-    <a href="/◊|prev-page|" title="← ◊(select 'h1 prev-page)" class="overlay prev"></a>}
+    <a href="/◊|prev-page|" title="← ◊(select 'h1 prev-page)" class="overlay prev">←</a>}
 
     ◊when/block[next-page]{
-    <a href="/◊|next-page|" title="◊(select 'h1 next-page) →" class="overlay next"></a>}
+    <a href="/◊|next-page|" title="◊(select 'h1 next-page) →" class="overlay next">→</a>}
 
 
   </main>
