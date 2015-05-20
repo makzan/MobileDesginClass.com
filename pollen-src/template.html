@@ -14,8 +14,18 @@
 <body>
   ◊(define prev-page (previous here))
   ◊(define next-page (next here))
+  ◊(define parent-page (parent here))
 
   <main id="main">
+    <header>
+      <p>
+        ◊when/block[(not (equal? 'pagetree-root parent-page))]{
+        <a id="chapter" href="/◊|parent-page|">◊(select 'h1 parent-page)</a>}
+      </p>
+      <p>
+        <a href='/'>Mobile Design Class</a>
+      </p>
+    </header>
 
     <article>
       ◊->html[doc]
@@ -24,12 +34,7 @@
     <nav>
 
       ◊when/block[prev-page]{
-      <a id="prev" href="/◊|prev-page|">← ◊(select 'h1 prev-page)</a>
-      <a id="top" href="/">Home</a>}
-
-      ◊(define parent-page (parent here))
-      ◊when/block[(not (equal? 'pagetree-root parent-page))]{
-      <a id="chapter" href="/◊|parent-page|">◊(select 'h1 parent-page)</a>}
+      <a id="prev" href="/◊|prev-page|">← ◊(select 'h1 prev-page)</a>}
 
       ◊when/block[next-page]{
       <a id="next" href="/◊|next-page|">◊(select 'h1 next-page) →</a>}
@@ -45,8 +50,9 @@
 
   </main>
 
-
-  <small>by ◊|author|.</small>
+  <footer>
+    <small><a href='/'>Mobile Design Class</a>. &copy; 2015 by ◊|author|. All rights reserved.</small>
+  </footer>
 
   <div id='overlay' class='out'>
     <img id='overlay-img' src=''>

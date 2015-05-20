@@ -3,8 +3,38 @@
 }
 
 body {
-  font-size: 16pt;
-  padding: 5%;
+  font-size: 17pt;
+
+  margin: 0;
+  padding: 3% 3% 5% 3%;
+
+  font-family: "adobe-caslon-pro", Georgia, serif;
+  font-variant-ligatures: common-ligatures;
+  font-kerning: normal;
+
+  font-weight: 400;
+  line-height: 1.45em;
+}
+
+article > root > p:first-of-type:first-letter {
+  font-size: 4.6em;
+  float: left;
+  line-height: .5;
+  margin: 0;
+  padding: .37em .05em 0 0;
+  color: CRIMSON;
+}
+
+@media screen and (min-width: 760px) {
+  body {
+    padding: 1% 5% 5% 5%;
+  }
+
+  article {
+    max-width: 720px;
+    margin-left: 270px;
+  }
+
 }
 
 img {
@@ -15,21 +45,22 @@ img {
 /* Layout */
 
 article {
-  font-size: 17pt;
-  font-family: "adobe-caslon-pro", Georgia, serif;
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  line-height: 1.45em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 h1, h2, h3, h4 {
   font-family: "Gill Sans", Arial, sans-serif;
   font-size: 1em;
+  margin-top: 2em;
+  margin-bottom: 1em;
 }
 h1 {
   font-size: 1.5em;
-  border-top: 3px solid BLACK;
   padding-top: 0.2em;
   line-height: 0.9em;
+}
+h1:first-of-type {
+  margin-top: 0;
 }
 
 
@@ -40,31 +71,67 @@ aside {
   font-size: 0.7em;
   line-height: 1.2em;
   font-family: monospace;
-  float: left;
-  width: 50%;
-  padding: 0 1em 1em 1em;
+
+  padding: 1em 0;
+  margin: 1em 0;
+
   color: GRAY;
+
+  border-top: 1px dashed DARKGRAY;
+  border-bottom: 1px dashed DARKGRAY;
 }
 aside figcaption {
   text-align: right;
 }
-
 @media screen and (min-width: 760px) {
-
-  article {
-    max-width: 720px;
-    margin-left: 270px;
-  }
-
   sidenote,
   aside{
-    margin-left: -270px;
+    margin: 0;
+    margin-left: -290px;
     width: 260px;
     position: absolute;
     text-align: right;
+    padding: 0 1em 1em 1em;
     color: GRAY;
+    border: none;
   }
+}
 
+/* Header */
+header {
+  border-bottom: 1px solid DARKGRAY;
+  max-width: 1000px;
+  overflow: auto;
+  font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 0.4em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 2em;
+}
+@media screen and (min-width: 760px) {
+  header {
+    font-size: 0.6em;
+  }
+}
+header a,
+header a:visited{
+  text-decoration: none;
+  color: GRAY;
+}
+header a:hover {
+  text-decoration: none;
+  color: CRIMSON;
+}
+header p {
+  margin: 0;
+  /*width: 50%;*/
+}
+header p:first-child {
+  float: left;
+}
+header p:last-child {
+  float: right;
+  text-align: right;
 }
 
 /* Section heading */
@@ -84,7 +151,16 @@ nav {
   display: flex;
   border-top: 1px solid LIGHTGRAY;
   max-width: 1000px;
-  font-size: 0.8em;
+  font-size: 0.5em;
+
+  font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  /*letter-spacing: 0.15em;*/
+  /*text-transform: uppercase;*/
+}
+@media screen and (min-width: 760px) {
+  nav {
+    font-size: 0.8em;
+  }
 }
 nav > a,
 nav > a:visited{
@@ -94,14 +170,14 @@ nav > a:visited{
   padding: 1em;
   color: BLACK;
   text-decoration: none;
-  text-decoration-skip: ink;
   text-align: center;
   border-left: 1px solid LIGHTGRAY;
 
 }
 nav > a:hover {
-  background: ALICEBLUE;
-  text-decoration: underline;
+  background: #faefca;
+  color: CRIMSON;
+  text-decoration: none;
 }
 nav > a:nth-child(1) {
   text-align: right;
@@ -181,4 +257,43 @@ img {
 /* Figure */
 figure {
   text-align: center;
+  margin: 0;
+}
+
+
+
+
+/* Link */
+a,
+a:visited {
+  color: CRIMSON;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+  text-decoration-skip: ink;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-top: 1px solid LIGHTGRAY;
+  max-width: 1000px;
+  color: GRAY;
+
+  font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 0.6em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+footer a,
+footer a:visited {
+  color: GRAY;
+}
+footer a:hover {
+  color: CRIMSON;
+  text-decoration: none;
 }

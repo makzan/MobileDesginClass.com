@@ -2,6 +2,8 @@
 
 ◊headline{Step 3—Local Notification}
 
+We use LocalNotification to schedule the time up message.
+
 ◊sidenote{
   ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-18%20at%2012.19.57%20PM.png"]{Prompting user for allowing notification.}
 }

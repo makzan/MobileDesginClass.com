@@ -9,11 +9,10 @@ In this step, we create the basic user interface.
   }
   ◊step{Crate new XCode project, with ◊em{swift} and ◊em{universal} option}
 
+  ◊sidenote{
+    ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-17%20at%209.10.50%20PM.png"]{Main.storyboard}
+  }
   ◊step{
-    ◊sidenote{
-      ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-17%20at%209.10.50%20PM.png"]{Main.storyboard}
-    }
-
     Setup the interface like the following.
   }
 

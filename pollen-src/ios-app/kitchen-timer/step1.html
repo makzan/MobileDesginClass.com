@@ -13,17 +13,22 @@
 </head>
 <body>
   <main id="main">
+    <header>
+      <p>
+        <a id="chapter" href="/ios-app/kitchen-timer/index.html">Kitchen Timer</a>
+      </p>
+      <p>
+        <a href='/'>Mobile Design Class</a>
+      </p>
+    </header>
 
     <article>
-      <root><h1>Step 1</h1><p>In this step, we create the basic user interface.</p><ol><p><li>Download the images from the <a href="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Interfaces%20for%20Kitchen%20Timer.zip">this link</a>.</li><br /><li>Crate new XCode project, with <em>swift</em> and <em>universal</em> option</li></p><p><li><aside><figure><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-17%20at%209.10.50%20PM.png" alt="Main.storyboard" /><figcaption>Main.storyboard</figcaption></figure></aside><p>Setup the interface like the following.</p></li></p><p><li><p>Create outlet.</p><pre><code class="language-swift">@IBOutlet weak var startButton: UIButton!<br />@IBOutlet weak var stopButton: UIButton!</code></pre></li><br /><li><p>Define 2 functions that controls the interface visibility.</p><pre><code class="language-swift"><p>// MARK - UI Visibility</p><p>func showRunningUI() {<br />    stopButton.hidden = false<br />    startButton.hidden = true<br />}</p><p>func showPrepareUI() {<br />    stopButton.hidden = true<br />    startButton.hidden = false<br />}</p></code></pre></li></p><p><li><p>Then we define the following button handler.</p><pre><code class="language-swift"><p>@IBAction func startTimer(sender: AnyObject) {<br />    showRunningUI()<br />}</p><p>@IBAction func cancelTimer(sender: AnyObject) {<br />    showPrepareUI()<br />}</p></code></pre></li><br /><li>At last, we setup the interface at the viewDidLoad<pre><code class="language-swift">override func viewDidLoad() {<br />    super.viewDidLoad()<br />    // Do any additional setup after loading the view, typically from a nib.<br />    showPrepareUI()<br />}</code></pre></li></p></ol></root>
+      <root><h1>Step 1</h1><p>In this step, we create the basic user interface.</p><ol><p><li>Download the images from the <a href="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Interfaces%20for%20Kitchen%20Timer.zip">this link</a>.</li><br /><li>Crate new XCode project, with <em>swift</em> and <em>universal</em> option</li></p><p><aside><figure><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-17%20at%209.10.50%20PM.png" alt="Main.storyboard" /><figcaption>Main.storyboard</figcaption></figure></aside><li>Setup the interface like the following.</li></p><p><li><p>Create outlet.</p><pre><code class="language-swift">@IBOutlet weak var startButton: UIButton!<br />@IBOutlet weak var stopButton: UIButton!</code></pre></li><br /><li><p>Define 2 functions that controls the interface visibility.</p><pre><code class="language-swift"><p>// MARK - UI Visibility</p><p>func showRunningUI() {<br />    stopButton.hidden = false<br />    startButton.hidden = true<br />}</p><p>func showPrepareUI() {<br />    stopButton.hidden = true<br />    startButton.hidden = false<br />}</p></code></pre></li></p><p><li><p>Then we define the following button handler.</p><pre><code class="language-swift"><p>@IBAction func startTimer(sender: AnyObject) {<br />    showRunningUI()<br />}</p><p>@IBAction func cancelTimer(sender: AnyObject) {<br />    showPrepareUI()<br />}</p></code></pre></li><br /><li>At last, we setup the interface at the viewDidLoad<pre><code class="language-swift">override func viewDidLoad() {<br />    super.viewDidLoad()<br />    // Do any additional setup after loading the view, typically from a nib.<br />    showPrepareUI()<br />}</code></pre></li></p></ol></root>
     </article>
 
     <nav>
 
       <a id="prev" href="/ios-app/kitchen-timer/index.html">← Kitchen Timer</a>
-<a id="top" href="/">Home</a>
-
-      <a id="chapter" href="/ios-app/kitchen-timer/index.html">Kitchen Timer</a>
 
       <a id="next" href="/ios-app/kitchen-timer/step2-auto-layout.html">Step 2—Adding Auto Layout →</a>
     </nav>
@@ -36,8 +41,9 @@
 
   </main>
 
-
-  <small>by Makzan.</small>
+  <footer>
+    <small><a href='/'>Mobile Design Class</a>. &copy; 2015 by Makzan. All rights reserved.</small>
+  </footer>
 
   <div id='overlay' class='out'>
     <img id='overlay-img' src=''>
