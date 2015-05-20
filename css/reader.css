@@ -70,18 +70,19 @@ aside {
 
   font-size: 0.7em;
   line-height: 1.2em;
-  font-family: monospace;
+
+  font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 0.6em;
 
   padding: 1em 0;
   margin: 1em 0;
 
   color: GRAY;
 
+  text-align: center;
+
   border-top: 1px dashed DARKGRAY;
   border-bottom: 1px dashed DARKGRAY;
-}
-aside figcaption {
-  text-align: right;
 }
 @media screen and (min-width: 760px) {
   sidenote,
@@ -250,6 +251,9 @@ img {
   color: #222;
   padding: 0.5em;
   border-top-right-radius: 3px;
+
+  font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 0.6em;
 }
 /* end of overlay */
 
@@ -258,6 +262,14 @@ img {
 figure {
   text-align: center;
   margin: 0;
+}
+figcaption {
+  font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: GRAY;
+  font-size: 0.6em;
+}
+aside figcaption{
+  font-size: 1em;
 }
 
 
