@@ -12,7 +12,7 @@ An optimal way to archive the same effect is by using interchange. We use javasc
 
 The reason we need to interchange content is because of the loading bandwidth. In the visibility section, we show and hide content based on the screen size. But the reader have to download all the content. Assuming the reader is reading on mobile but we load a large image for large screen reader. Then the mobile reader needs to download a high resolution image with the cecular data but never see this image.
 
-◊html{
+◊markup{
 <img data-interchange="[/path/to/default.jpg, (default)], [/path/to/bigger-image.jpg, (large)]">
 <noscript><img src="/path/to/default.jpg"></noscript>
 }

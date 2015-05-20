@@ -37,7 +37,7 @@
 
 (define (objc . text) `(pre (code [[class, "language-objectivec"]],@ text)))
 (define (swift . text) `(pre (code [[class, "language-swift"]],@ text)))
-(define (html . text) `(pre (code [[class, "language-html"]],@ text)))
+(define (markup . text) `(pre (code [[class, "language-markup"]],@ text)))
 (define (css . text) `(pre (code [[class, "language-css"]],@ text)))
 
 (define (ioscode code1 code2) `(div (div (a [[data-lang, "objc"]], "Obj-C") (a [[data-lang, "swift"]], "Swift")), code1 , code2) )
@@ -46,7 +46,8 @@
 
 (require pollen/decode txexpr)
 (register-block-tag 'code)
-(define (root . elements)
-   (make-txexpr 'root null (decode-elements elements
-     #:txexpr-elements-proc detect-paragraphs
-     #:string-proc (compose smart-dashes))))
+
+(define (root . items)
+  (decode (make-txexpr 'root '() items)
+    #:txexpr-elements-proc detect-paragraphs
+    #:exclude-tags '(style script pre code)))

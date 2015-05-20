@@ -6,7 +6,7 @@ Here is a demo showing the usage of ◊code{flex-video} class from Zurb Foundati
 
 An extra ◊code{widescreen} class would make the hight calculation uses the widescreen ratio.
 
-◊html{
+◊markup{
 <div class='row'>
   <div class='small-9 columns'>
     <div class="flex-video widescreen">

@@ -31,7 +31,7 @@ Here you can find the list of the files we get and their purposes from Foundatio
 
 This is the suggested HTML setup by Zurb.
 
-◊html{
+◊markup{
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en">
@@ -63,7 +63,7 @@ This is the suggested HTML setup by Zurb.
 
 If we don’t need the modernizr, we can use the following:
 
-◊html{
+◊markup{
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,7 +92,7 @@ If we don’t need the modernizr, we can use the following:
 
 If we just need the CSS part and not using any of the JavaScript depended component, we can further trim the code into the following:
 
-◊html{
+◊markup{
 <!DOCTYPE html>
 <html lang="en">
 

@@ -18,7 +18,7 @@ If we want to un-center a column in specific screen size, we can use the ◊code
 
 HTML
 
-◊html{
+◊markup{
 <div class='header-bg'>
   <div class='row'>
     <div class='small-6 small-centered columns'>Big Title Here</div>

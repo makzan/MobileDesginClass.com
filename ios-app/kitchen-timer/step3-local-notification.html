@@ -25,7 +25,53 @@
     </header>
 
     <article>
-      <root><h1>Step 3—Local Notification</h1><p>We use LocalNotification to schedule the time up message.</p><aside><figure><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-18%20at%2012.19.57%20PM.png" alt="Prompting user for allowing notification." /><figcaption>Prompting user for allowing notification.</figcaption></figure></aside><figure><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/IMG_0274.jpg" alt="Properties for notification action." /><figcaption>Properties for notification action.</figcaption></figure><pre><code class="language-swift">UIApplication.sharedApplication().scheduleLocalNotification(notification)</code></pre><pre><code class="language-swift"><p>func registerNotification() {<br />    // type<br />    let type = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound</p><p>// actions<br />    let action1 = UIMutableUserNotificationAction()<br />    action1.identifier = "EXTRA_30S"<br />    action1.title = "+30s"<br />    action1.activationMode = UIUserNotificationActivationMode.Background<br />    action1.destructive = false<br />    action1.authenticationRequired = false</p><p>// action category<br />    let category = UIMutableUserNotificationCategory()<br />    category.identifier = "EXTRA_TIME_CATEGORY"<br />    category.setActions([action1], forContext: UIUserNotificationActionContext.Default)<br />    category.setActions([action1], forContext: UIUserNotificationActionContext.Minimal)</p><p>// setting<br />    let setting = UIUserNotificationSettings(forTypes: type, categories: [category])</p><p>// really register<br />    UIApplication.sharedApplication().registerUserNotificationSettings(setting)<br />}</p><p>// MARK: - Scheduling notification</p><p>func scheduleNotificationWithInterval(seconds:NSTimeInterval) {<br />    let notification = UILocalNotification()<br />    notification.fireDate = NSDate(timeIntervalSinceNow: seconds)<br />    notification.timeZone = NSTimeZone.defaultTimeZone()<br />    notification.alertBody = "Time’s up"<br />    notification.alertAction = "Dismiss"<br />    notification.soundName = UILocalNotificationDefaultSoundName<br />    notification.applicationIconBadgeNumber = 0<br />    notification.category = "EXTRA_TIME_CATEGORY"</p><p>UIApplication.sharedApplication().scheduleLocalNotification(notification)<br />}</p><p>// MARK: - Managing existing notifications</p><p>func hasNotifications() -&gt; Bool {<br />    return UIApplication.sharedApplication().scheduledLocalNotifications.count &gt; 0<br />}</p><p>func removeAllNotifications() {<br />    UIApplication.sharedApplication().cancelAllLocalNotifications()<br />}</p></code></pre><p>At last, we prompt the user for registration.</p><pre><code class="language-swift">// register notification<br />LocalNotificationManager.sharedInstance.registerNotification()</code></pre><div><h2 id="by-the-way"><a href="#by-the-way">By the way</a></h2><li>There is no difference in user’s view for <em>remote notification</em> and <em>local notification</em></li><br /><li>We should carefully design when to prompt user for the notification permission. Asking the permission in wrong timing may result in deny.</li><br /><li>There is no way to programmatically trigger the prompt again after deny. User need to manuanlly turn on notification for your app inside the OS setting app.</li></div></root>
+      <root><h1>Step 3—Local Notification</h1><p>We use LocalNotification to schedule the time up message.</p><aside><figure><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-18%20at%2012.19.57%20PM.png" alt="Prompting user for allowing notification." /><figcaption>Prompting user for allowing notification.</figcaption></figure></aside><figure><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/IMG_0274.jpg" alt="Properties for notification action." /><figcaption>Properties for notification action.</figcaption></figure><p>The usage of local notification:</p><pre><code class="language-swift">UIApplication.sharedApplication().scheduleLocalNotification(notification)</code></pre><h2 id="time-for-action"><a href="#time-for-action"><string-append>Time for Action—Creating LocalNotificationManager</string-append></a></h2><ol><p><li>Create a new class file named <code>LocalNotificationManager.swift</code>.</li></p><p><li><p>Before scheduling any notifications, we need to grant the permission from the user. We define the following function that register the notification and defining the notification actions.</p><pre><code class="language-swift">func registerNotification() {
+    // type
+    let type = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+
+    // actions
+    let action1 = UIMutableUserNotificationAction()
+    action1.identifier = "EXTRA_30S"
+    action1.title = "+30s"
+    action1.activationMode = UIUserNotificationActivationMode.Background
+    action1.destructive = false
+    action1.authenticationRequired = false
+
+
+    // action category
+    let category = UIMutableUserNotificationCategory()
+    category.identifier = "EXTRA_TIME_CATEGORY"
+    category.setActions([action1], forContext: UIUserNotificationActionContext.Default)
+    category.setActions([action1], forContext: UIUserNotificationActionContext.Minimal)
+
+    // setting
+    let setting = UIUserNotificationSettings(forTypes: type, categories: [category])
+
+    // really register
+    UIApplication.sharedApplication().registerUserNotificationSettings(setting)
+}</code></pre></li></p><p><li><p>We define the following function that really schedule the local notification.</p><pre><code class="language-swift">// MARK: - Scheduling notification
+
+func scheduleNotificationWithInterval(seconds:NSTimeInterval) {
+    let notification = UILocalNotification()
+    notification.fireDate = NSDate(timeIntervalSinceNow: seconds)
+    notification.timeZone = NSTimeZone.defaultTimeZone()
+    notification.alertBody = "Time’s up"
+    notification.alertAction = "Dismiss"
+    notification.soundName = UILocalNotificationDefaultSoundName
+    notification.applicationIconBadgeNumber = 0
+    notification.category = "EXTRA_TIME_CATEGORY"
+
+    UIApplication.sharedApplication().scheduleLocalNotification(notification)
+}</code></pre></li></p><p><li><p>Then we add the following 2 functions that manage existing notifications.</p><pre><code class="language-swift">// MARK: - Managing existing notifications
+
+func hasNotifications() -&gt; Bool {
+    return UIApplication.sharedApplication().scheduledLocalNotifications.count &gt; 0
+}
+
+func removeAllNotifications() {
+    UIApplication.sharedApplication().cancelAllLocalNotifications()
+}</code></pre></li></p><p><li><p>At last, we prompt the user for registration.</p><pre><code class="language-swift">// register notification
+LocalNotificationManager.sharedInstance.registerNotification()</code></pre></li></p></ol><p>We have completed the basic local notification functionality. In next step, we’ll work on the <em>+30s</em> and <em>-30s</em> buttons.</p><div><h2 id="by-the-way"><a href="#by-the-way">By the way</a></h2><li>There is no difference in user’s view for <em>remote notification</em> and <em>local notification</em></li><br /><li>We should carefully design when to prompt user for the notification permission. Asking the permission in wrong timing may result in deny.</li><br /><li>There is no way to programmatically trigger the prompt again after deny. User need to manuanlly turn on notification for your app inside the OS setting app.</li></div></root>
     </article>
 
     <nav>
@@ -58,6 +104,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="/js/smoothstate.js"></script>
   <script src="/js/website.js"></script>
-
+  <script src="/js/prism.min.js"></script>
 </body>
 </html>

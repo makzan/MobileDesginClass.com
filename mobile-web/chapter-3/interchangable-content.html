@@ -15,7 +15,7 @@
   <main id="main">
     <header>
       <p>
-        <a id="chapter" href="/mobile-web/chapter-3/index.html">Chapter 3–Using Zurb foundation</a>
+        <a id="chapter" href="/mobile-web/chapter-3/index.html">Chapter 3 – Using Zurb foundation</a>
 
 
       </p>
@@ -25,7 +25,8 @@
     </header>
 
     <article>
-      <root><h1>Interchangable content</h1><p>Responsive design comes with a downside: It wastes (mobile data) bandwidth if a lot of information is hidden in small screen. And it slows down the page loading.</p><aside><figure><img src="http://makzan.net/assets/mobile-web-design/interchangable-5d1c90ac6ff5e183f9e07a8e310c2b9d.png" alt="Showing different image sources for different screen sizes." /><figcaption>Showing different image sources for different screen sizes.</figcaption></figure></aside><p>An optimal way to archive the same effect is by using interchange. We use javascript to load the image at the size that fits the reader's screen. Smaller image for small screen. Higher resolution image for larger screen. The readers only need to load what they are going to read. They should never load something that they don't see and use.</p><p>The reason we need to interchange content is because of the loading bandwidth. In the visibility section, we show and hide content based on the screen size. But the reader have to download all the content. Assuming the reader is reading on mobile but we load a large image for large screen reader. Then the mobile reader needs to download a high resolution image with the cecular data but never see this image.</p><pre><code class="language-html">&lt;img data-interchange="[/path/to/default.jpg, (default)], [/path/to/bigger-image.jpg, (large)]"&gt;<br />&lt;noscript&gt;&lt;img src="/path/to/default.jpg"&gt;&lt;/noscript&gt;</code></pre><p>Demo:</p><p><iframe seamless="seamless" src="http://jsfiddle.net/makzan/XFye6/embedded/result/"></iframe></p><p>Foundation website provides a detailed tutorial on using the interchangable content in different scenarios. Ensure to check it out.</p><h2 id="exercise"><a href="#exercise">Exercise</a></h2><p><a href="http://jsfiddle.net/makzan/hLHBu/">Exercise: Try to define 2 sizes of image for the header.</a></p></root>
+      <root><h1>Interchangable content</h1><p>Responsive design comes with a downside: It wastes (mobile data) bandwidth if a lot of information is hidden in small screen. And it slows down the page loading.</p><aside><figure><img src="http://makzan.net/assets/mobile-web-design/interchangable-5d1c90ac6ff5e183f9e07a8e310c2b9d.png" alt="Showing different image sources for different screen sizes." /><figcaption>Showing different image sources for different screen sizes.</figcaption></figure></aside><p>An optimal way to archive the same effect is by using interchange. We use javascript to load the image at the size that fits the reader's screen. Smaller image for small screen. Higher resolution image for larger screen. The readers only need to load what they are going to read. They should never load something that they don't see and use.</p><p>The reason we need to interchange content is because of the loading bandwidth. In the visibility section, we show and hide content based on the screen size. But the reader have to download all the content. Assuming the reader is reading on mobile but we load a large image for large screen reader. Then the mobile reader needs to download a high resolution image with the cecular data but never see this image.</p><pre><code class="language-markup">&lt;img data-interchange="[/path/to/default.jpg, (default)], [/path/to/bigger-image.jpg, (large)]"&gt;
+&lt;noscript&gt;&lt;img src="/path/to/default.jpg"&gt;&lt;/noscript&gt;</code></pre><p>Demo:</p><p><iframe seamless="seamless" src="http://jsfiddle.net/makzan/XFye6/embedded/result/"></iframe></p><p>Foundation website provides a detailed tutorial on using the interchangable content in different scenarios. Ensure to check it out.</p><h2 id="exercise"><a href="#exercise">Exercise</a></h2><p><a href="http://jsfiddle.net/makzan/hLHBu/">Exercise: Try to define 2 sizes of image for the header.</a></p></root>
     </article>
 
     <nav>
@@ -58,6 +59,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="/js/smoothstate.js"></script>
   <script src="/js/website.js"></script>
-
+  <script src="/js/prism.min.js"></script>
 </body>
 </html>

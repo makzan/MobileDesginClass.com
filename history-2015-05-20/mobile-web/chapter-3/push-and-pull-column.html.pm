@@ -8,7 +8,7 @@ A special push and pull class allows us to change the order of the columns.
 
 ◊figure["http://makzan.net/assets/mobile-web-design/push-pull-sidebar-right-5953c64eacf0ffd9a4b251271251bf51.png"]{Our example starts in this layout.}
 
-◊html{
+◊markup{
 <div class='row'>
   <div class='small-9 columns'>Content</div>
   <div class='small-3 columns'>Sidebar</div>
@@ -19,7 +19,7 @@ What if we want to put the sidebar on the left? Instead of moving the sidebar co
 
 ◊figure["http://makzan.net/assets/mobile-web-design/push-pull-sidebar-left-21b73bfabdae74ecce5fa80b8fadfc95.png"]{Sidebar on the left.}
 
-◊html{
+◊markup{
 <div class='row'>
   <div class='small-9 small-push-3 columns'>Content</div>
   <div class='small-3 small-pull-9 columns'>Sidebar</div>

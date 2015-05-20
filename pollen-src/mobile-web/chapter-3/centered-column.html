@@ -15,7 +15,7 @@
   <main id="main">
     <header>
       <p>
-        <a id="chapter" href="/mobile-web/chapter-3/index.html">Chapter 3–Using Zurb foundation</a>
+        <a id="chapter" href="/mobile-web/chapter-3/index.html">Chapter 3 – Using Zurb foundation</a>
 
 
       </p>
@@ -25,7 +25,24 @@
     </header>
 
     <article>
-      <root><h1>Centered column</h1><p>We can center a column by using the <code>small-centered</code> class.</p><aside><figure><img src="http://makzan.net/assets/mobile-web-design/centered-column-1c670ec81b55a7103a053d4ae9d180e8.png" alt="Demo of centered column." /><figcaption>Demo of centered column.</figcaption></figure></aside><p>Here is a demo on centered column.</p><p>As same as the grid, there is <code>medium-centered</code> and <code>large-centered</code> class. We don’t need the medium and large because they will inherit the <code>small-centered</code> class if we hasn’t specify.</p><p>If we want to un-center a column in specific screen size, we can use the <code>medium-uncentered</code> and <code>large-uncentered</code>.</p><p><a href="http://jsfiddle.net/makzan/5ww8u5c1/">Open example in jsFiddle.</a></p><p>HTML</p><pre><code class="language-html">&lt;div class='header-bg'&gt;<br />  &lt;div class='row'&gt;<br />    &lt;div class='small-6 small-centered columns'&gt;Big Title Here&lt;/div&gt;<br />  &lt;/div&gt;<br />&lt;/div&gt;</code></pre><p>CSS</p><pre><code class="language-css"><p>.header-bg {<br />  background: url(http://placekitten.com/1000/500) center center;<br />  background-size: cover;<br />  background-attachment: fixed;<br />  padding: 3em;<br />}</p><p>.columns {<br />  background: rgba(255, 255, 255, .5);<br />  border: 1px solid blue;<br />  padding-top: 1em;<br />  padding-bottom: 1em;<br />  margin-bottom: 1em;<br />}</p></code></pre></root>
+      <root><h1>Centered column</h1><p>We can center a column by using the <code>small-centered</code> class.</p><aside><figure><img src="http://makzan.net/assets/mobile-web-design/centered-column-1c670ec81b55a7103a053d4ae9d180e8.png" alt="Demo of centered column." /><figcaption>Demo of centered column.</figcaption></figure></aside><p>Here is a demo on centered column.</p><p>As same as the grid, there is <code>medium-centered</code> and <code>large-centered</code> class. We don’t need the medium and large because they will inherit the <code>small-centered</code> class if we hasn’t specify.</p><p>If we want to un-center a column in specific screen size, we can use the <code>medium-uncentered</code> and <code>large-uncentered</code>.</p><p><a href="http://jsfiddle.net/makzan/5ww8u5c1/">Open example in jsFiddle.</a></p><p>HTML</p><pre><code class="language-markup">&lt;div class='header-bg'&gt;
+  &lt;div class='row'&gt;
+    &lt;div class='small-6 small-centered columns'&gt;Big Title Here&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre><p>CSS</p><pre><code class="language-css">.header-bg {
+  background: url(http://placekitten.com/1000/500) center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 3em;
+}
+
+.columns {
+  background: rgba(255, 255, 255, .5);
+  border: 1px solid blue;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}</code></pre></root>
     </article>
 
     <nav>
@@ -58,6 +75,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="/js/smoothstate.js"></script>
   <script src="/js/website.js"></script>
-
+  <script src="/js/prism.min.js"></script>
 </body>
 </html>

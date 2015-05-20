@@ -19,7 +19,7 @@ The columns order from left to right following the order of the divs by default.
 
 Here is a demo for the basic grid.
 
-◊html{
+◊markup{
 <div class='row'>
   <div class='small-3 columns'>Left Nav Bar</div>
   <div class='small-9 columns'>Content</div>
@@ -32,7 +32,7 @@ Here is a demo for the basic grid.
 
 After we add the medium columns setting, the propotional varies between small and medium screen.
 
-◊html{
+◊markup{
 <div class='row'>
   <div class='small-6 medium-3 columns'>Left Nav Bar</div>
   <div class='small-6 medium-9 columns'>Content</div>

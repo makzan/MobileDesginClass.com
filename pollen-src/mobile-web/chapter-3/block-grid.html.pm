@@ -4,7 +4,7 @@
 
 Foundation provides ◊code{small-block-grid-N}, ◊code{medium-block-grid-N} and ◊code{large-block-grid-N}. It’s very convinent when we need to spread the content evenly inside a space.
 
-◊html{
+◊markup{
 <ul class="small-block-grid-2 medium-block-grid-4">
   <li><img src="http://placehold.it/300x200" alt="placeholder" /></li>
   ...

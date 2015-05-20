@@ -25,7 +25,11 @@
     </header>
 
     <article>
-      <root><h1>Pull to refresh with UIRefreshControl</h1><p>Step 1: Enable the <em>Refreshing</em> option in any <code>UIScrollView</code> in Storyboard.</p><figure><img src="http://makzan.net/assets/ios-dev-scrapbook/table-view-refreshing-enabled-8c1dbb2ed1734edcd6a38345409a997e.png" alt="Table view refreshing enabled in Storyboard." /><figcaption>Table view refreshing enabled in Storyboard.</figcaption></figure><p>Step 2: Setup the refresh logic that tracks the <code>UIControlEventValueChanged</code> event:</p><pre><code class="language-objectivec">[self.refreshControl addTarget:self<br />                        action:@selector(refreshNews:)<br />              forControlEvents:UIControlEventValueChanged];</code></pre><p>Step 3: Implement the selector with logic that’s executed when user pulls and refreshes the view.</p><pre><code class="language-objectivec">- (void) refreshNews: (id)selector {<br />  // logic here to refresh the table view.<br />}</code></pre></root>
+      <root><h1>Pull to refresh with UIRefreshControl</h1><p>Step 1: Enable the <em>Refreshing</em> option in any <code>UIScrollView</code> in Storyboard.</p><figure><img src="http://makzan.net/assets/ios-dev-scrapbook/table-view-refreshing-enabled-8c1dbb2ed1734edcd6a38345409a997e.png" alt="Table view refreshing enabled in Storyboard." /><figcaption>Table view refreshing enabled in Storyboard.</figcaption></figure><p>Step 2: Setup the refresh logic that tracks the <code>UIControlEventValueChanged</code> event:</p><pre><code class="language-objectivec">[self.refreshControl addTarget:self
+                        action:@selector(refreshNews:)
+              forControlEvents:UIControlEventValueChanged];</code></pre><p>Step 3: Implement the selector with logic that’s executed when user pulls and refreshes the view.</p><pre><code class="language-objectivec">- (void) refreshNews: (id)selector {
+  // logic here to refresh the table view.
+}</code></pre></root>
     </article>
 
     <nav>
@@ -58,6 +62,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="/js/smoothstate.js"></script>
   <script src="/js/website.js"></script>
-
+  <script src="/js/prism.min.js"></script>
 </body>
 </html>

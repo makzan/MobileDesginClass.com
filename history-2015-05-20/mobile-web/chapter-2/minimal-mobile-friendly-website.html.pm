@@ -6,7 +6,7 @@ The following code example shows how we can create a minimal website style that 
 
 The HTML:
 
-◊html{
+◊markup{
 <header>
   <div class="row">
     Website Title here
