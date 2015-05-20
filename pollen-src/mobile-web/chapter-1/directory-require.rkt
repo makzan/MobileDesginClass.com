@@ -16,6 +16,8 @@
   )
 )
 
+(define (btw . content) `(div (h2 [[id, "by-the-way"]] (a [[href, "#by-the-way"]] "By the way")),@ content ))
+
 (define (link url text) `(a [[href, url]], text))
 
 (define (figure url text) `(figure (img [[src, url] [alt, text]]) (figcaption [], text) ) )
