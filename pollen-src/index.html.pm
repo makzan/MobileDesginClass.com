@@ -2,7 +2,7 @@
 
 ◊headline{Mobile Design Class}
 
-You'll find 3 topics in this ◊em{mobile design class}. They are ◊strong{mebile web design}, ◊strong{iOS app development} and ◊strong{Mobile UI Design}. You may read the online version for ◊em{free}, or you may buy the eBook edition.
+You’ll find 3 topics in this ◊em{mobile design class}. They are ◊strong{mebile web design}, ◊strong{iOS app development} and ◊strong{Mobile UI Design}. You may read the online version for ◊em{free}, or you may buy the eBook edition.
 
 The course was originally hosted on ◊link["http://makzan.net"]{makzan.net}. I’m migrating and updating the content into this domain.
 

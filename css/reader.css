@@ -6,12 +6,12 @@
 root { display: block; }
 
 body {
-  font-size: 17pt;
+  font-size: 16pt;
 
   margin: 0;
   padding: 3% 3% 5% 3%;
 
-  font-family: "adobe-caslon-pro", Georgia, serif;
+  font-family: "charterregular", Georgia, serif;
   font-variant-ligatures: common-ligatures;
   font-kerning: normal;
 
