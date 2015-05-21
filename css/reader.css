@@ -100,14 +100,14 @@ aside {
   border-top: 1px dashed DARKGRAY;
   border-bottom: 1px dashed DARKGRAY;
 
-  height: 100px;
-  overflow: hidden;
-  transition: all 0.3s ease-out;
+  /*height: 100px;*/
+  /*overflow: hidden;*/
+  /*transition: all 0.3s ease-out;*/
 }
-sidenote:hover,
-aside:hover {
-  height: 130px;
-}
+/*sidenote:hover,*/
+/*aside:hover {*/
+/*  height: 130px;*/
+/*}*/
 sidenote.expanded,
 sidenote:active,
 aside.expanded,
@@ -344,16 +344,17 @@ footer {
   padding-bottom: 1em;
   border-top: 1px solid LIGHTGRAY;
   max-width: 1000px;
-  color: GRAY;
+  color: DARKGRAY;
 
   font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 0.6em;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  line-height: 1.2em;
 }
 footer a,
 footer a:visited {
-  color: GRAY;
+  color: DARKGRAY;
 }
 footer a:hover {
   color: CRIMSON;
