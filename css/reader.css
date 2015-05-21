@@ -378,3 +378,15 @@ iframe {
   padding: 1em;
   min-width: 0;
 }
+
+
+/* Inline code */
+p > code,
+p > a > code,
+li > code,
+span > code
+{
+  font-size: 0.6em;
+  padding: 0.3em;
+  background: #efefef;
+}

@@ -16,6 +16,8 @@
   )
 )
 
+(define (term text1 . content) `(li (strong, text1) " " ,@ content) )
+
 (define (btw . content) `(div (h2 [[id, "by-the-way"]] (a [[href, "#by-the-way"]] "By the way")),@ content ))
 
 (define (link url text) `(a [[href, url]], text))
