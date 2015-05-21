@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 
+/* Fix Pollen tags */
+root { display: block; }
+
 body {
   font-size: 17pt;
 
@@ -16,7 +19,15 @@ body {
   line-height: 1.45em;
 }
 
+
+/*.dropcap {*/
+/*  color: CRIMSON;*/
+/*  font-style: normal;*/
+/*}*/
+
+/* Using Dropcap.js */
 article > root > p:first-of-type:first-letter {
+  initial-letter: 2;
   font-size: 4.6em;
   float: left;
   line-height: .5;
@@ -24,6 +35,9 @@ article > root > p:first-of-type:first-letter {
   padding: .37em .05em 0 0;
   color: CRIMSON;
   font-style: normal;
+}
+.firefox article > root > p:first-of-type:first-letter {
+  padding-top: 0.1em;
 }
 
 @media screen and (min-width: 760px) {
@@ -35,7 +49,6 @@ article > root > p:first-of-type:first-letter {
     max-width: 720px;
     margin-left: 270px;
   }
-
 }
 
 img {
@@ -84,6 +97,22 @@ aside {
 
   border-top: 1px dashed DARKGRAY;
   border-bottom: 1px dashed DARKGRAY;
+
+  height: 100px;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+sidenote:hover,
+aside:hover {
+  height: 130px;
+}
+sidenote.expanded,
+sidenote:active,
+aside.expanded,
+aside:active
+{
+  height: auto;
+  overflow: auto;
 }
 @media screen and (min-width: 760px) {
   sidenote,
@@ -91,11 +120,17 @@ aside {
     margin: 0;
     margin-left: -290px;
     width: 260px;
+    height: auto;
+    overflow: auto;
     position: absolute;
     text-align: right;
     padding: 0 1em 1em 1em;
     color: GRAY;
     border: none;
+  }
+  sidenote:hover,
+  aside:hover {
+    height: auto;
   }
 }
 
@@ -338,4 +373,5 @@ iframe {
 .block-grid-2 > * {
   flex: 1;
   padding: 1em;
+  min-width: 0;
 }

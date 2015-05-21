@@ -1,9 +1,38 @@
+// // First letter
+// var dropcapFirstLetter = function(){
+//   $('article > root > p:first-of-type').html(function (i, html) {
+//       return html.replace(/^[^a-zA-Z]*([a-zA-Z])/g, '<span class="dropcap">$1</span>');
+//   });
+
+//   // We retrieve our drop cap elements using a class selector...
+//   var dropcaps = document.querySelectorAll(".dropcap");
+
+//   // ...then give them a height of three lines.
+//   // By default, the drop cap's baseline will also be the third paragraph line.
+//   window.Dropcap.layout(dropcaps, 3);
+// };
+
+var fixFirstLetterInFirefox = function() {
+  if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+    $('html').addClass('firefox');
+  }
+};
+
 ;(function($) {
   $(function(){
+    // dropcapFirstLetter();
+    fixFirstLetterInFirefox();
+
     $('#main').smoothState({
       prefetch: true,
       pageCacheSize: 0,
       callback : function(url, $container, $content) {
+        // Prism:
+        Prism.highlightAll();
+
+        // dropcapFirstLetter();
+        fixFirstLetterInFirefox();
+
         // TODO: integrate into the overlay code block
         registerAllImgToImageViewer();
       }
@@ -21,6 +50,8 @@
     p.innerHTML = p.innerHTML.replace(reg, "&nbsp$1");
   }
 })(jQuery);
+
+
 
 
 // TODO: Change to use jQuery delegate to select img, because of PJAX loading.
