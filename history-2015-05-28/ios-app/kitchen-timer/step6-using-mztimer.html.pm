@@ -5,7 +5,7 @@
 We implemented the ◊code{MZTimer} and ◊code{MZMutableTimer}, now we use it in our application.
 
 ◊(steps
-  ◊step{
+  ◊step{We connect the label into code as ◊code{countDownLabel} IBOutlet.
     ◊swift{
       @IBOutlet weak var countDownLabel: UILabel!
     }
@@ -21,7 +21,7 @@ We implemented the ◊code{MZTimer} and ◊code{MZMutableTimer}, now we use it i
     }
   }
 
-  ◊step{
+  ◊step{For the ◊code{startTimer} and ◊code{cancelTimer}, we prepare the user interface and setup the timer via the ◊code{MZMutableTimer} class.
     ◊swift{
       @IBAction func startTimer(sender: AnyObject) {
         showRunningUI()
@@ -35,7 +35,7 @@ We implemented the ◊code{MZTimer} and ◊code{MZMutableTimer}, now we use it i
     }
   }
 
-  ◊step{
+  ◊step{Then we define a ◊code{NSTimer} that change the interface constantly. Note that this logic only affects the interface. The actually counting logic is done via the ◊code{MZTimer} and local notification.
     ◊swift{
       // MARK: - Timer interface
       func startUITimer() {

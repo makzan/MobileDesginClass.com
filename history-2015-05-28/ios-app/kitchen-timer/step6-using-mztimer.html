@@ -29,11 +29,11 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 6—Using MZTimer</h1><p>We implemented the <code>MZTimer</code> and <code>MZMutableTimer</code>, now we use it in our application.</p><ol><li><pre><code class="language-swift">@IBOutlet weak var countDownLabel: UILabel!</code></pre></li><li>Inside <code>viewDidLoad</code>.<pre><code class="language-swift">if (MZTimer.sharedTimer.isRunning()) {
+      <root><h1>Step 6—Using MZTimer</h1><p>We implemented the <code>MZTimer</code> and <code>MZMutableTimer</code>, now we use it in our application.</p><ol><li>We connect the label into code as <code>countDownLabel</code> IBOutlet.<pre><code class="language-swift">@IBOutlet weak var countDownLabel: UILabel!</code></pre></li><li>Inside <code>viewDidLoad</code>.<pre><code class="language-swift">if (MZTimer.sharedTimer.isRunning()) {
   showRunningUI()
 } else {
   showPrepareUI()
-}</code></pre></li><li><pre><code class="language-swift">@IBAction func startTimer(sender: AnyObject) {
+}</code></pre></li><li>For the <code>startTimer</code> and <code>cancelTimer</code>, we prepare the user interface and setup the timer via the <code>MZMutableTimer</code> class.<pre><code class="language-swift">@IBAction func startTimer(sender: AnyObject) {
   showRunningUI()
   MZMutableTimer.sharedMutableTimer.scheduleAlertForSeconds(seconds)
 }
@@ -41,7 +41,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
 @IBAction func cancelTimer(sender: AnyObject) {
   showPrepareUI()
   MZMutableTimer.sharedMutableTimer.cancelAlerts()
-}</code></pre></li><li><pre><code class="language-swift">// MARK: - Timer interface
+}</code></pre></li><li>Then we define a <code>NSTimer</code> that change the interface constantly. Note that this logic only affects the interface. The actually counting logic is done via the <code>MZTimer</code> and local notification.<pre><code class="language-swift">// MARK: - Timer interface
 func startUITimer() {
   let timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "tick", userInfo: nil, repeats: true)
 }
@@ -61,13 +61,13 @@ func tick() {
 
       <a id="prev" href="/ios-app/kitchen-timer/step5-implement-mztimer.html">← Step 5—Implementing MZTimer</a>
 
-      <a id="next" href="/ios-app/kitchen-timer/step7-timer-format.html">Timer Format →</a>
+      <a id="next" href="/ios-app/kitchen-timer/step7-timer-format.html">Step 7—Timer Format →</a>
     </nav>
 
 
     <a href="/ios-app/kitchen-timer/step5-implement-mztimer.html" title="← Step 5—Implementing MZTimer" class="overlay prev">←</a>
 
-    <a href="/ios-app/kitchen-timer/step7-timer-format.html" title="Timer Format →" class="overlay next">→</a>
+    <a href="/ios-app/kitchen-timer/step7-timer-format.html" title="Step 7—Timer Format →" class="overlay next">→</a>
 
 
   </main>

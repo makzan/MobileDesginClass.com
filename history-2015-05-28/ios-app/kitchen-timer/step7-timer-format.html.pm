@@ -1,6 +1,6 @@
 #lang pollen
 
-◊headline{Timer Format}
+◊headline{Step 7—Timer Format}
 
 ◊sidenote{
   ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-28%20at%201.08.05%20PM.png"]{Screenshot of the timer counting down}
