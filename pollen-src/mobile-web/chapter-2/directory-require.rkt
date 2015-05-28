@@ -47,7 +47,6 @@
 
 
 (require pollen/decode txexpr)
-(register-block-tag 'code)
 
 (define (root . items)
   (decode (make-txexpr 'root '() items)

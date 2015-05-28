@@ -92,3 +92,7 @@ window.onscroll = function(e) {
   return hide_overlay();
 };
 
+
+
+
+mixpanel.track("Page view.");

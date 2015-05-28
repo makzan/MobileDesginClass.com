@@ -19,6 +19,12 @@ The usage of local notification:
 ◊steps{
   ◊step{Create a new class file named ◊code{LocalNotificationManager.swift}.}
 
+  ◊step{Add the following singleton declaration to the class:
+    ◊swift{
+      static let sharedManager = LocalNotificationManager()
+    }
+  }
+
   ◊step{Before scheduling any notifications, we need to grant the permission from the user. We define the following function that register the notification and defining the notification actions.
 
     ◊swift{

@@ -9,6 +9,10 @@ index.html
     ios-app/kitchen-timer/step1.html
     ios-app/kitchen-timer/step2-auto-layout.html
     ios-app/kitchen-timer/step3-local-notification.html
+    ios-app/kitchen-timer/step4-select-seconds.html
+    ios-app/kitchen-timer/step5-implement-mztimer.html
+    ios-app/kitchen-timer/step6-using-mztimer.html
+    ios-app/kitchen-timer/step7-timer-format.html
     ios-app/kitchen-timer/another-autolayout-example.html
   }
   ios-app/pull-to-refresh.html

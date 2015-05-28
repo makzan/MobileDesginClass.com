@@ -33,7 +33,7 @@ article > root > p:first-of-type:first-letter {
   float: left;
   line-height: .5;
   margin: 0;
-  padding: .37em .05em 0 0;
+  padding: .37em .07em 0 0;
   color: CRIMSON;
   font-style: normal;
 }
@@ -211,20 +211,38 @@ nav > a:visited{
   text-decoration: none;
   text-align: center;
   border-left: 1px solid LIGHTGRAY;
-
+  background-position: -500px 0;
+  background-repeat: no-repeat;
+  
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  
+  /*background-color: #faefca;*/
+  background-image: -webkit-gradient(linear, left center, right center, from(rgba(250, 239, 202, 1.00)), to(rgba(250, 239, 202, 0.00)));
+  background-image: -webkit-linear-gradient(left, rgba(250, 239, 202, 1.00), rgba(250, 239, 202, 0.00));
+  background-image: linear-gradient(left, rgba(250, 239, 202, 1.00), rgba(250, 239, 202, 0.00));
 }
-nav > a:hover {
-  background: #faefca;
+nav > a:hover,
+nav > a:active {
+  background-position: 0 0;
+
   color: CRIMSON;
   text-decoration: none;
 }
 nav > a:nth-child(1) {
+  background-position: 500px 0;
   text-align: right;
   border-left: none;
+  
+  background-image: -webkit-gradient(linear, left center, right center, from(rgba(250, 239, 202, 0.00)), to(rgba(250, 239, 202, 1.00)));
+  background-image: -webkit-linear-gradient(left, rgba(250, 239, 202, 0.00), rgba(250, 239, 202, 1.00));
+  background-image: linear-gradient(left, rgba(250, 239, 202, 0.00), rgba(250, 239, 202, 1.00));
+}
+nav > a:nth-child(1):hover,
+nav > a:nth-child(1):active{
+  background-position: 0 0;
 }
 nav > a:last-child {
   text-align: left;
-
 }
 
 /* Overlay Nav */
@@ -261,6 +279,15 @@ pre {
   font-size: 12pt;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+p > code,
+li > code,
+aside > code
+{
+  font-size: 0.7em;
+  padding: .2em;
+  background: #efefef;
 }
 
 
@@ -377,16 +404,4 @@ iframe {
   flex: 1;
   padding: 1em;
   min-width: 0;
-}
-
-
-/* Inline code */
-p > code,
-p > a > code,
-li > code,
-span > code
-{
-  font-size: 0.6em;
-  padding: 0.3em;
-  background: #efefef;
 }
