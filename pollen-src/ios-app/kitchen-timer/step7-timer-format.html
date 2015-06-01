@@ -41,9 +41,7 @@ extension NSNumber {
     return NSString(format: "%02d:%02d", m, s)
   }
 }</code></pre></li><li>In the <code>tick</code> method, we change to the following code:<pre><code class="language-swift">func tick() {
-  let elapsedSeconds = MZTimer.sharedTimer.elapsedSeconds()
-  let targetDuration = MZTimer.sharedTimer.targetDuration()
-  let remainSeconds:NSNumber = targetDuration + elapsedSeconds // elapsedSeconds is always negative.
+  let remainSeconds:NSNumber = MZTimer.sharedTimer.remainSeconds()
 
   countDownLabel.text = remainSeconds.stringOfMinutesSeconds() as String
 }</code></pre></li><li>Try to run the app. Add 30 seconds and press start. We can now see the timer label is counting down.</li><li>We can improve the <code>tick</code> method. Replace the tick method with the following code:<pre><code class="language-swift">func tick() {
@@ -56,9 +54,7 @@ extension NSNumber {
 
   showRunningUI()
 
-  let elapsedSeconds = MZTimer.sharedTimer.elapsedSeconds()
-  let targetDuration = MZTimer.sharedTimer.targetDuration()
-  let remainSeconds:NSNumber = targetDuration + elapsedSeconds // elapsedSeconds is always negative.
+  let remainSeconds:NSNumber = MZTimer.sharedTimer.remainSeconds()
 
   countDownLabel.text = remainSeconds.stringOfMinutesSeconds() as String
 }</code></pre></li></ol><div><h2 id="by-the-way"><a href="#by-the-way">By the way</a></h2><li>Swift automatically bridges Double, Integer, Bool into NSNumber. But it won’t automatically cast it.</li><br /><li>We have cast the NSString into String for UILabel text.</li><br /><li>Extensions is similar to <code>Category</code> in Objective-C.</li></div></root>

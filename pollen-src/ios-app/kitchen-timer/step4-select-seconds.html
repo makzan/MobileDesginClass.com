@@ -38,10 +38,10 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
   seconds = max(seconds-30, 0) // minus 30, minimun 0.
 }</code></pre></li><li><p>We originally hard-coded the notification time interval to 30 seconds. Now we change the hard-coded value by using the instant variable <code>seconds</code>.<br />The old code:</p><pre><code class="language-swift">@IBAction func startTimer(sender: AnyObject) {
   showRunningUI()
-  LocalNotificationManager.sharedInstance.scheduleNotificationWithInterval(30.0)
+  LocalNotificationManager.sharedManager.scheduleNotificationWithInterval(30.0)
 }</code></pre><p>Change to the following new code:</p><pre><code class="language-swift">@IBAction func startTimer(sender: AnyObject) {
   showRunningUI()
-  LocalNotificationManager.sharedInstance.scheduleNotificationWithInterval(seconds)
+  LocalNotificationManager.sharedManager.scheduleNotificationWithInterval(seconds)
 }</code></pre></li></ol></root>
     </article>
 

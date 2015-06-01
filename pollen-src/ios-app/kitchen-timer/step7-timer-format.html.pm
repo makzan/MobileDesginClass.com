@@ -27,9 +27,7 @@
   ◊step{In the ◊code{tick} method, we change to the following code:
     ◊swift{
       func tick() {
-        let elapsedSeconds = MZTimer.sharedTimer.elapsedSeconds()
-        let targetDuration = MZTimer.sharedTimer.targetDuration()
-        let remainSeconds:NSNumber = targetDuration + elapsedSeconds // elapsedSeconds is always negative.
+        let remainSeconds:NSNumber = MZTimer.sharedTimer.remainSeconds()
 
         countDownLabel.text = remainSeconds.stringOfMinutesSeconds() as String
       }
@@ -50,9 +48,7 @@
 
         showRunningUI()
 
-        let elapsedSeconds = MZTimer.sharedTimer.elapsedSeconds()
-        let targetDuration = MZTimer.sharedTimer.targetDuration()
-        let remainSeconds:NSNumber = targetDuration + elapsedSeconds // elapsedSeconds is always negative.
+        let remainSeconds:NSNumber = MZTimer.sharedTimer.remainSeconds()
 
         countDownLabel.text = remainSeconds.stringOfMinutesSeconds() as String
       }

@@ -19,6 +19,8 @@ Step 4: ◊link[(local "step4-select-seconds.html")]{Select seconds to schedule.
 Step 5: ◊link[(local "step5-implement-mztimer.html")]{Implementing MZTimer.}
 Step 6: ◊link[(local "step6-using-mztimer.html")]{Using MZTimer.}
 Step 7: ◊link[(local "step7-timer-format.html")]{Timer Format.}
+Step 8: ◊link[(local "step8-creating-today-extension.html")]{Creating today extension.}
+Step 9: ◊link[(local "step9-handling-notification-event.html")]{Handling notification event.}
 
 
 

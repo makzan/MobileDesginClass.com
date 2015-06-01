@@ -31,7 +31,7 @@
     ◊swift{
       @IBAction func startTimer(sender: AnyObject) {
         showRunningUI()
-        LocalNotificationManager.sharedInstance.scheduleNotificationWithInterval(30.0)
+        LocalNotificationManager.sharedManager.scheduleNotificationWithInterval(30.0)
       }
     }
 
@@ -40,7 +40,7 @@
     ◊swift{
       @IBAction func startTimer(sender: AnyObject) {
         showRunningUI()
-        LocalNotificationManager.sharedInstance.scheduleNotificationWithInterval(seconds)
+        LocalNotificationManager.sharedManager.scheduleNotificationWithInterval(seconds)
       }
     }
   }

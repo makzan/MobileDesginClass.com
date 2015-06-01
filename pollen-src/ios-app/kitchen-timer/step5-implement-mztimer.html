@@ -66,7 +66,13 @@ let TIMER_DURATION_KEY = "TargetDuration"</code></pre></li><li><pre><code class=
 
     return userDefault.objectForKey(TIMER_DURATION_KEY) as! NSTimeInterval
   }
-}</code></pre></li><li><pre><code class="language-swift">class MZMutableTimer: MZTimer {
+
+  func remainSeconds() -&gt; NSTimeInterval {
+    let elapsedSeconds = MZTimer.sharedTimer.elapsedSeconds()
+    let targetDuration = MZTimer.sharedTimer.targetDuration()
+    return targetDuration - elapsedSeconds
+  }
+}</code></pre></li><li>Then we implement the <code>MZMutableTimer</code> class which inherits the <code>MZTimer</code>. This class handles all the local notification’s scheduling and canceling.<pre><code class="language-swift">class MZMutableTimer: MZTimer {
   static let sharedMutableTimer = MZMutableTimer()
 
   func scheduleAlertForSeconds(seconds:NSTimeInterval) {
@@ -86,6 +92,20 @@ let TIMER_DURATION_KEY = "TargetDuration"</code></pre></li><li><pre><code class=
     userDefault.removeObjectForKey(TIMER_START_AT_KEY)
     userDefault.removeObjectForKey(TIMER_DURATION_KEY)
   }
+
+  func cancelAlertsIfZero() {
+    if (remainSeconds() &lt;= 0) {
+      cancelAlerts()
+    }
+  }
+}</code></pre></li><li>We want to reset the timer if the counting is done while the application is in background. In the <code>AppDelegate</code>, we tell the <code>MZMutableTimer</code> to reset any alerts if the count down has completed.<pre><code class="language-swift">func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
+  // Override point for customization after application launch.
+
+  MZMutableTimer.sharedMutableTimer.cancelAlertsIfZero()
+
+  return true
+}</code></pre><pre><code class="language-swift">func applicationDidBecomeActive(application: UIApplication) {
+  MZMutableTimer.sharedMutableTimer.cancelAlertsIfZero()
 }</code></pre></li></ol></root>
     </article>
 
