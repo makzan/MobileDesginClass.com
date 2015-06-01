@@ -8,14 +8,14 @@ In this step, we implement the timer utility class. We call it ◊code{MZTimer}.
   ◊step{Create a new class file named ◊code{MZTimer.swift}.}
   ◊step{Create a new class file named ◊code{MZMutableTimer.swift}, which extends the ◊code{MZTimer} class.}
 
-  ◊step{
+  ◊step{We define the following string constant for the ◊code{NSUserDefaults} key.
     ◊swift{
       let TIMER_START_AT_KEY = "TimerStartedAt"
       let TIMER_DURATION_KEY = "TargetDuration"
     }
   }
 
-  ◊step{
+  ◊step{Then we implement the following ◊code{MZTimer} class.
     ◊swift{
       class MZTimer: NSObject {
         static let sharedTimer = MZTimer()

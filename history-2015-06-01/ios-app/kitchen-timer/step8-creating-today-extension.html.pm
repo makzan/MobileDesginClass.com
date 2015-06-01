@@ -82,9 +82,7 @@ In this step, we create an extension for the app. We allow user to schedule a ne
           return
         }
 
-        let elapsedSeconds = MZTimer.sharedTimer.elapsedSeconds()
-        let targetDuration = MZTimer.sharedTimer.targetDuration()
-        let remainSeconds:NSNumber = targetDuration + elapsedSeconds // elapsedSeconds is always negative.
+        let remainSeconds:NSNumber = MZTimer.sharedTimer.remainSeconds()
 
         countDownLabel.text = remainSeconds.stringOfMinutesSeconds() as String
       }

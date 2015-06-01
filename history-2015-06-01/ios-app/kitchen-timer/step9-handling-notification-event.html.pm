@@ -30,3 +30,9 @@
     }
   }
 )
+
+◊(btw
+  ◊item{The notification action actually works in Apple Watch automatically:
+    ◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/IMG_4564.PNG"]{Controling notification actions in Apple Watch.}
+  }
+)

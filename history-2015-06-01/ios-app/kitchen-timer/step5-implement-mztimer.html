@@ -29,8 +29,8 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 5—Implementing MZTimer</h1><p>In this step, we implement the timer utility class. We call it <code>MZTimer</code>. It comes with a mutable companion—<code>MZMutableTimer</code>.</p><ol><li>Create a new class file named <code>MZTimer.swift</code>.</li><li>Create a new class file named <code>MZMutableTimer.swift</code>, which extends the <code>MZTimer</code> class.</li><li><pre><code class="language-swift">let TIMER_START_AT_KEY = "TimerStartedAt"
-let TIMER_DURATION_KEY = "TargetDuration"</code></pre></li><li><pre><code class="language-swift">class MZTimer: NSObject {
+      <root><h1>Step 5—Implementing MZTimer</h1><p>In this step, we implement the timer utility class. We call it <code>MZTimer</code>. It comes with a mutable companion—<code>MZMutableTimer</code>.</p><ol><li>Create a new class file named <code>MZTimer.swift</code>.</li><li>Create a new class file named <code>MZMutableTimer.swift</code>, which extends the <code>MZTimer</code> class.</li><li>We define the following string constant for the <code>NSUserDefaults</code> key.<pre><code class="language-swift">let TIMER_START_AT_KEY = "TimerStartedAt"
+let TIMER_DURATION_KEY = "TargetDuration"</code></pre></li><li>Then we implement the following <code>MZTimer</code> class.<pre><code class="language-swift">class MZTimer: NSObject {
   static let sharedTimer = MZTimer()
 
   func sharedUserDefault() -&gt; NSUserDefaults {

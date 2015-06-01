@@ -52,9 +52,7 @@ func tick() {
     return
   }
 
-  let elapsedSeconds = MZTimer.sharedTimer.elapsedSeconds()
-  let targetDuration = MZTimer.sharedTimer.targetDuration()
-  let remainSeconds:NSNumber = targetDuration + elapsedSeconds // elapsedSeconds is always negative.
+  let remainSeconds:NSNumber = MZTimer.sharedTimer.remainSeconds()
 
   countDownLabel.text = remainSeconds.stringOfMinutesSeconds() as String
 }</code></pre></li><li><p>Next, we create a connection between the extension and the main application. We do that by using the application URL scheme. Configure the main app with the following URL type.</p><aside>Note: You may want to choose a different URL scheme because this scheme shares among all the iOS apps installed in the device.</aside><figure><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-28%20at%202.16.08%20PM.png" alt="Setting URL scheme in the main app" /><figcaption>Setting URL scheme in the main app</figcaption></figure></li><li><p>When user presses <em>start</em> button in the extension, it actually launches the parent app by calling URL. Extension cannot invoke NSLocalNotification directly.</p><pre><code class="language-swift">@IBAction func start(sender: AnyObject) {
