@@ -2,7 +2,6 @@
 
 index.html
 ◊ios-app/index.html{
-  ios-app/toc.html
   ios-app/example-1.html
   ios-app/pragma-mark.html
   ◊ios-app/kitchen-timer/index.html{
@@ -16,6 +15,9 @@ index.html
     ios-app/kitchen-timer/step8-creating-today-extension.html
     ios-app/kitchen-timer/step9-handling-notification-event.html
     ios-app/kitchen-timer/another-autolayout-example.html
+  }
+  ◊ios-app/quick-thoughts/index.html{
+    ios-app/quick-thoughts/final-source-code.html
   }
   ios-app/pull-to-refresh.html
   ios-app/apple-watch.html
