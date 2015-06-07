@@ -65,7 +65,7 @@ article {
   padding-bottom: 2em;
 }
 h1, h2, h3, h4 {
-  font-family: "Gill Sans", Arial, sans-serif;
+  font-family: "Gill Sans MT", "Gill Sans", Arial, sans-serif;
   font-size: 1em;
   margin-top: 2em;
   margin-bottom: 1em;
@@ -192,7 +192,7 @@ nav {
   max-width: 1000px;
   font-size: 0.5em;
 
-  font-family: "Gill Sans",Helvetica,Arial,sans-serif;
+  font-family: "Gill Sans MT", "Gill Sans",Helvetica,Arial,sans-serif;
   /*letter-spacing: 0.15em;*/
   /*text-transform: uppercase;*/
 }
