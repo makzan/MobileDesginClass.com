@@ -219,6 +219,7 @@ nav > a:visited{
   /*background-color: #faefca;*/
   background-image: -webkit-gradient(linear, left center, right center, from(rgba(250, 239, 202, 1.00)), to(rgba(250, 239, 202, 0.00)));
   background-image: -webkit-linear-gradient(left, rgba(250, 239, 202, 1.00), rgba(250, 239, 202, 0.00));
+  background-image: -moz-linear-gradient(left, rgba(250, 239, 202, 1.00), rgba(250, 239, 202, 0.00));
   background-image: linear-gradient(left, rgba(250, 239, 202, 1.00), rgba(250, 239, 202, 0.00));
 }
 nav > a:hover,

@@ -42,7 +42,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
 
   // clear saved content also
   userDefault.removeObjectForKey(SAVED_TEXT_KEY)
-}</code></pre></li><li><pre><code class="language-swift">@IBAction func loadText(sender: AnyObject) {
+}</code></pre></li><li>Then we implement the <code>loadText</code> IBAction.<pre><code class="language-swift">@IBAction func loadText(sender: AnyObject) {
   // check if text view has un-saved text
   if (self.mainTextView.text.isEmpty) {
     loadLastText()

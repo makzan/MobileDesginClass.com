@@ -29,7 +29,7 @@
       }
     }
   }
-  ◊step{
+  ◊step{Then we implement the ◊code{loadText} IBAction.
     ◊swift{
       @IBAction func loadText(sender: AnyObject) {
         // check if text view has un-saved text
