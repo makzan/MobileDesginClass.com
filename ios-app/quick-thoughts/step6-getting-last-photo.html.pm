@@ -2,6 +2,7 @@
 
 ◊headline{Step 6—Getting last photo}
 
+In this step, we allow the user to share the last photo along with the text.
 
 ◊(steps
   ◊step{In the interface builder, add a ◊em{Long Press} gesture recognizer to the save button.}
@@ -38,8 +39,8 @@
     }
   }
   ◊step{Link the Long Press action to the ◊code{ViewController.swift} as IBAction ◊code{longPressSaveThought:}.}
-  ◊step{
-    ◊swift{Then we implement the long press gesture handler.
+  ◊step{Then we implement the long press gesture handler.
+    ◊swift{
        @IBAction func longPressSaveThought(sender: AnyObject) {
         // ask if want to include the last photo
         let alertView = UIAlertController(title: "Save Thought", message: "Do you want to include the last image in Photo Library?", preferredStyle: UIAlertControllerStyle.ActionSheet)
