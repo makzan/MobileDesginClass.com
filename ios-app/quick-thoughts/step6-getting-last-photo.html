@@ -29,30 +29,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 6—Getting last photo</h1><p>You may check the Swift guide on using the Closures</p><p>https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html</p><ol><li>In the interface builder, add a <em>Long Press</em> gesture recognizer to the save button.</li><li>Link the Long Press action to the <code>ViewController.swift</code> as IBAction <code>longPressSaveThought:</code>.</li><li><pre><code class="language-swift"> @IBAction func longPressSaveThought(sender: AnyObject) {
-  // ask if want to include the last photo
-  let alertView = UIAlertController(title: "Save Thought", message: "Do you want to include the last image in Photo Library?", preferredStyle: UIAlertControllerStyle.ActionSheet)
-
-  alertView.addAction(UIAlertAction(title: "Save with last photo", style: UIAlertActionStyle.Default, handler: { (action) -&gt; Void in
-      self.getLastPhoto({ (lastPhoto) -&gt; Void in
-        self.shareItems([self.mainTextView.text, lastPhoto])
-      })
-
-  }))
-
-  alertView.addAction(UIAlertAction(title: "Save the text", style: UIAlertActionStyle.Default, handler: { (action) -&gt; Void in
-      self.shareItems([self.mainTextView.text])
-  }))
-
-
-  alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-
-  // for iPad
-  alertView.popoverPresentationController?.sourceView = self.saveButton
-
-  self.presentViewController(alertView, animated: true, completion: nil)
-
-}</code></pre></li><li>To use the PhotoKit, we need to import the framework at the beginning of the file. After the existing <code>import UIKit</code> line, add the following line:<pre><code class="language-swift">import Photos</code></pre></li><li><pre><code class="language-swift">// MARK: - Get Last Photo
+      <root><h1>Step 6—Getting last photo</h1><ol><li>In the interface builder, add a <em>Long Press</em> gesture recognizer to the save button.</li><li>To use the PhotoKit, we need to import the framework at the beginning of the file. After the existing <code>import UIKit</code> line, add the following line:<pre><code class="language-swift">import Photos</code></pre></li><li>We implement the following function to get the last photo.<pre><code class="language-swift">// MARK: - Get Last Photo
 func getLastPhoto(completion:(image:UIImage)-&gt;Void) {
   let fetchOptions = PHFetchOptions()
   fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
@@ -74,7 +51,8 @@ func getLastPhoto(completion:(image:UIImage)-&gt;Void) {
     NSLog("photo: %@", photo!)
     completion(image: photo!)
   })
-}</code></pre></li><li><pre><code class="language-swift">@IBAction func longPressSaveThought(sender: AnyObject) {
+}</code></pre></li><li>Link the Long Press action to the <code>ViewController.swift</code> as IBAction <code>longPressSaveThought:</code>.</li><li><pre><code class="language-swift">Then we implement the long press gesture handler.
+ @IBAction func longPressSaveThought(sender: AnyObject) {
   // ask if want to include the last photo
   let alertView = UIAlertController(title: "Save Thought", message: "Do you want to include the last image in Photo Library?", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
@@ -96,7 +74,8 @@ func getLastPhoto(completion:(image:UIImage)-&gt;Void) {
   alertView.popoverPresentationController?.sourceView = self.saveButton
 
   self.presentViewController(alertView, animated: true, completion: nil)
-}</code></pre></li></ol><h2 id="what-just-happened?"><a href="#what-just-happened?">What just happened?</a></h2><p>We enhanced the project with ability to share last photo alongside the text.</p></root>
+
+}</code></pre></li></ol><h2 id="what-just-happened?"><a href="#what-just-happened?">What just happened?</a></h2><p>We enhanced the project with ability to share last photo alongside the text.</p><p>You may check the <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html">Swift guide on using the Closures</a>.</p></root>
     </article>
 
     <nav>
