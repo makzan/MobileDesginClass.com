@@ -17,6 +17,12 @@ index.html
     ios-app/kitchen-timer/another-autolayout-example.html
   }
   ◊ios-app/quick-thoughts/index.html{
+    ios-app/quick-thoughts/step1-building-interface.html
+    ios-app/quick-thoughts/step2-handle-keyboard-size.html
+    ios-app/quick-thoughts/step3-saving-text-locally.html
+    ios-app/quick-thoughts/step4-basic-sharing-function.html
+    ios-app/quick-thoughts/step5-load-last-shared-text.html
+    ios-app/quick-thoughts/step6-getting-last-photo.html
     ios-app/quick-thoughts/final-source-code.html
   }
   ios-app/pull-to-refresh.html

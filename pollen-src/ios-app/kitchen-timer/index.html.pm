@@ -22,6 +22,7 @@ Step 7: ◊link[(local "step7-timer-format.html")]{Timer Format.}
 Step 8: ◊link[(local "step8-creating-today-extension.html")]{Creating today extension.}
 Step 9: ◊link[(local "step9-handling-notification-event.html")]{Handling notification event.}
 
+You may download the source code in the ◊link["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/KitchenTimer-Swift.zip"]{this link}.
 
 
 

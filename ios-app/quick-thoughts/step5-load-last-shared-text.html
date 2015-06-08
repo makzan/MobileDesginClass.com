@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="//use.typekit.net/lyx0zwz.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Step 5—Loading last shared text | Modile Design Class</title>
+  <link rel="stylesheet" href="/css/prism.css">
+  <link rel="stylesheet" href="/css/reader.css">
+
+  <!-- Typekit -->
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
+</head>
+<body>
+  <main id="main">
+    <header>
+      <p>
+        <a id="chapter" href="/ios-app/quick-thoughts/index.html">Quick Thoughts</a>
+
+
+      </p>
+      <p>
+        <a href='/'>Mobile Design Class</a>
+      </p>
+    </header>
+
+    <article>
+      <root><h1>Step 5—Loading last shared text</h1><ol><li>In the interface builder, we add a <code>BarButtonItem</code> to the right side of the navigation bar. We give it a title <em>“Load”</em>.</li><li>We link the action of the <em>Load</em> button to the <code>ViewController.swift</code> as IBAction <code>loadText:</code>.</li><li>At the beginning of the <code>ViewController.swift</code> file, we added a <code>SAVED_TEXT_KEY</code> constant. After that, we add the following constant.<pre><code class="language-swift">let LAST_TEXT_KEY  = "LAST_TEXT_KEY"</code></pre></li><li>In the <code>afterShare</code> function, we add the following code that stores the text into user defaults with key <code>LAST_TEXT_KEY</code>. The <code>afterShare</code> funciton becomes:<pre><code class="language-swift">func afterShare() {
+  // before clearing the text, we store it.
+  let userDefault = NSUserDefaults.standardUserDefaults()
+  userDefault.setObject(self.mainTextView.text, forKey: LAST_TEXT_KEY)
+
+  // clear the text view
+  self.mainTextView.text = ""
+
+  // show the keyboard again
+  self.mainTextView.becomeFirstResponder()
+
+  // clear saved content also
+  userDefault.removeObjectForKey(SAVED_TEXT_KEY)
+}</code></pre></li><li><pre><code class="language-swift">@IBAction func loadText(sender: AnyObject) {
+  // check if text view has un-saved text
+  if (self.mainTextView.text.isEmpty) {
+    loadLastText()
+  }else {
+    // prompt alert view
+    let alertController = UIAlertController(title: "Un-saved text", message: "You have un-saved text. Do you want to override your text?", preferredStyle: UIAlertControllerStyle.Alert)
+    alertController.addAction(UIAlertAction(title: "Load and override", style: UIAlertActionStyle.Destructive, handler: { (action) -&gt; Void in
+        self.loadLastText()
+    }))
+    alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+    self.presentViewController(alertController, animated: true, completion: nil)
+  }
+}
+func loadLastText() {
+  let userDefault = NSUserDefaults.standardUserDefaults()
+  if (userDefault.objectForKey(LAST_TEXT_KEY) != nil) {
+    self.mainTextView.text = userDefault.stringForKey(LAST_TEXT_KEY)
+  }
+}</code></pre></li></ol></root>
+    </article>
+
+    <nav>
+
+      <a id="prev" href="/ios-app/quick-thoughts/step4-basic-sharing-function.html">← Step 4—Basic Sharing Function</a>
+
+      <a id="next" href="/ios-app/quick-thoughts/step6-getting-last-photo.html">Step 6—Getting last photo →</a>
+    </nav>
+
+
+    <a href="/ios-app/quick-thoughts/step4-basic-sharing-function.html" title="← Step 4—Basic Sharing Function" class="overlay prev">←</a>
+
+    <a href="/ios-app/quick-thoughts/step6-getting-last-photo.html" title="Step 6—Getting last photo →" class="overlay next">→</a>
+
+
+  </main>
+
+  <footer>
+    <small><a href='/'>Mobile Design Class</a>. &copy; 2015 by Makzan. All rights reserved.</small>
+  </footer>
+
+  <div id='overlay' class='out'>
+    <img id='overlay-img' src=''>
+    <div id='overlay-caption'></div>
+  </div>
+
+  <!-- © 2015 Thomas Seng Hin Mak. -->
+
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="/js/smoothstate.js"></script>
+  <script src="/js/prism.min.js"></script>
+  <script src="/js/website.js"></script>
+</body>
+</html>
