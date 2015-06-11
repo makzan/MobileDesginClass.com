@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="//use.typekit.net/lyx0zwz.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Content Structure | Modile Design Class</title>
+  <link rel="stylesheet" href="/css/prism.css">
+  <link rel="stylesheet" href="/css/reader.css">
+
+  <!-- Typekit -->
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
+</head>
+<body>
+  <main id="main">
+    <header>
+      <p>
+        <a id="chapter" href="/mobile-web/chapter-2/index.html">Chapter 2</a>
+
+
+      </p>
+      <p>
+        <a href='/'>Mobile Design Class</a>
+      </p>
+    </header>
+
+    <article>
+      <root><h1>Content Structure</h1><p>The first step is not make your website fit in mobile. The first thing you should do is make your content fits in the mobile device.</p><p>Remember, people don’t consume website. They consume content.</p><figure><img src="http://makzan.net/assets/mobile-web-design/article-extraction-e53fe89a49c9af7ab3f3ff1edbf4db76.png" alt="Main content is marked as green color." /><figcaption>Main content is marked as green color.</figcaption></figure><h2 id="article-view—broken-one"><a href="#article-view—broken-one">Article view—Broken one</a></h2><p>There is an article view in mobile Safari. The iOS parsed the web page and try to extract the content for a better reading experience.</p><div class="block-grid-2"><figure><img src="http://makzan.net/assets/mobile-web-design/macao-portal-normal-ce63f22e8d690e098f9515c43e13cefc.png" alt="The article displayed in it’s original website." /><figcaption>The article displayed in it’s original website.</figcaption></figure><figure><img src="http://makzan.net/assets/mobile-web-design/macao-portal-article-6966ecea6f9fdf174a5e192ed68d45c6.png" alt="The same article displayed by the browser’s article-only view." /><figcaption>The same article displayed by the browser’s article-only view.</figcaption></figure></div><p>Notice that the important headline in the article is missing in the article view.</p><aside><figure><img src="http://makzan.net/assets/mobile-web-design/macao-portal-pocket-af2d1f13e31acf3ae9e479a4772c2eea.png" alt="The same article being displayed in a read-later service." /><figcaption>The same article being displayed in a read-later service.</figcaption></figure></aside><p>Moreover, most read-later service also supports content extraction. For example, the following screenshot shows how Pocket displays the content in its mobile app, with a good reading experience.</p><h2 id="article-view—woking-one"><a href="#article-view—woking-one">Article view—Woking one</a></h2><p>Here is another example:</p><div class="block-grid-2"><figure><img src="http://makzan.net/assets/mobile-web-design/hk-news-normal-84a6d19be802b50030461757defb91db.png" alt="The article displayed in it’s original website." /><figcaption>The article displayed in it’s original website.</figcaption></figure><figure><img src="http://makzan.net/assets/mobile-web-design/hk-news-article-38bb650278711696552af9a73783ed15.png" alt="The same article displayed by the browser’s article-only view." /><figcaption>The same article displayed by the browser’s article-only view.</figcaption></figure></div><h2 id="article-in-evernote"><a href="#article-in-evernote">Article in Evernote</a></h2><p>Similar article view is not only use in mobile but also desktop service, such as Evernote.</p><figure><img src="http://makzan.net/assets/mobile-web-design/evernote-bb008aed895536b3ff62ac4a085df31d.png" alt="Article being extracted by Evernote." /><figcaption>Article being extracted by Evernote.</figcaption></figure><p>So how we could make the system or service extract the content correctly?</p><p>When we plan our HTML structure, we can make use of the &lt;article&gt; tag. Here is the explanation from Mozilla.</p><blockquote>The HTML &lt;article&gt; Element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable, e.g., in syndication.</blockquote><p>It’s often confusing when deciding when to use the section tag and when to use the article tag.</p><p>Good structure helps web service analysis your content.</p><p>Two quotes from the w3 spec helping us to choose between section and article.</p><blockquote>Authors are encouraged to use the article element instead of the section element when it would make sense to syndicate the contents of the element.</blockquote><blockquote>When an element is needed for styling purposes or as a convenience for scripting, authors are encouraged to use the div element instead. A general rule is that the section element is appropriate only if the element's contents would be listed explicitly in the document's outline.</blockquote></root>
+    </article>
+
+    <nav>
+
+      <a id="prev" href="/mobile-web/chapter-2/content-strategy.html">← Content strategy</a>
+
+      <a id="next" href="/mobile-web/chapter-2/mobile-first-approach.html">Mobile First Approach →</a>
+    </nav>
+
+
+    <a href="/mobile-web/chapter-2/content-strategy.html" title="← Content strategy" class="overlay prev">←</a>
+
+    <a href="/mobile-web/chapter-2/mobile-first-approach.html" title="Mobile First Approach →" class="overlay next">→</a>
+
+
+  </main>
+
+  <footer>
+    <small><a href='/'>Mobile Design Class</a>. &copy; 2015 by Makzan. All rights reserved.</small>
+  </footer>
+
+  <div id='overlay' class='out'>
+    <img id='overlay-img' src=''>
+    <div id='overlay-caption'></div>
+  </div>
+
+  <!-- © 2015 Thomas Seng Hin Mak. -->
+
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="/js/smoothstate.js"></script>
+  <script src="/js/prism.min.js"></script>
+  <script src="/js/website.js"></script>
+</body>
+</html>

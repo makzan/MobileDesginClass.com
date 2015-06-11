@@ -23,6 +23,7 @@ index.html
     ios-app/quick-thoughts/step4-basic-sharing-function.html
     ios-app/quick-thoughts/step5-load-last-shared-text.html
     ios-app/quick-thoughts/step6-getting-last-photo.html
+    ios-app/quick-thoughts/step7-polishing-photo-fetching-logic.html
     ios-app/quick-thoughts/final-source-code.html
   }
   ios-app/pull-to-refresh.html
