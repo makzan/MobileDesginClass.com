@@ -54,3 +54,14 @@
     }
   }
 )
+
+◊section{What just happened?}
+
+We want to make sure the loading won't override the text accenditally. We prompt the user an alert if user trys to load a text into the non-empty text view.
+
+◊figure["https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/IMG_4691.jpg"]{An alert on loading text with non-empty text view.}
+
+
+
+
+

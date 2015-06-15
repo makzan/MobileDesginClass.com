@@ -61,7 +61,7 @@ func loadLastText() {
   if (userDefault.objectForKey(LAST_TEXT_KEY) != nil) {
     self.mainTextView.text = userDefault.stringForKey(LAST_TEXT_KEY)
   }
-}</code></pre></li></ol></root>
+}</code></pre></li></ol><h2 id="what-just-happened?"><a href="#what-just-happened?">What just happened?</a></h2><p>We want to make sure the loading won't override the text accenditally. We prompt the user an alert if user trys to load a text into the non-empty text view.</p><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/IMG_4691.jpg" alt="An alert on loading text with non-empty text view." /></p><figcaption>An alert on loading text with non-empty text view.</figcaption></figure></root>
     </article>
 
     <nav>

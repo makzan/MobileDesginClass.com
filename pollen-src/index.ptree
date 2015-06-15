@@ -26,6 +26,13 @@ index.html
   }
   ◊ios-app/mail-me/index.html{
     ios-app/mail-me/step1-choosing-between-share-and-action-extension.html
+    ios-app/mail-me/step2-designing-the-ui.html
+    ios-app/mail-me/step3-a-class-for-email-setting.html
+    ios-app/mail-me/step4-configuring-main-view-controller.html
+    ios-app/mail-me/step5-creating-share-extension.html
+    ios-app/mail-me/step6-configure-app-group.html
+    ios-app/mail-me/step7-installing-alamofire-library.html
+    ios-app/mail-me/step8-core-logic-of-share-extension.html
   }
   ◊ios-app/secrets/index.html{
     ios-app/secrets/step1-prototyping-in-storyboard.html

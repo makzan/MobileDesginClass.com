@@ -8,6 +8,7 @@
     ◊swift{
       let EMAIL_TO_KEY = "EMAIL_TO_KEY"
       let EMAIL_FROM_KEY = "EMAIL_FROM_KEY"
+      let EMAIL_SUBJECT_KEY = "EMAIL_SUBJECT_KEY"
 
       class EmailSetting: NSObject {
         static let sharedSetting = EmailSetting()
@@ -23,7 +24,8 @@
           return NSUserDefaults.standardUserDefaults()
         }
 
-        func save(toEmail:String, fromEmail:String) {
+        func save(subject subject:String, to toEmail:String, from fromEmail:String) {
+          userDefaults().setObject(subject, forKey: EMAIL_SUBJECT_KEY)
           userDefaults().setObject(toEmail, forKey: EMAIL_TO_KEY)
           userDefaults().setObject(fromEmail, forKey: EMAIL_FROM_KEY)
           userDefaults().synchronize()
@@ -32,6 +34,7 @@
         func load() -> (String, String){
           var to = userDefaults().stringForKey(EMAIL_TO_KEY)
           var from = userDefaults().stringForKey(EMAIL_FROM_KEY)
+          var subject = userDefaults().stringForKey(EMAIL_SUBJECT_KEY)
 
           if (to == nil) {
               to = ""
@@ -41,7 +44,11 @@
               from = ""
           }
 
-          return (to!, from!)
+          if (subject == nil) {
+            subject = ""
+        }
+
+          return (subject!, to!, from!)
         }
       }
     }
@@ -55,6 +62,6 @@ This ◊code{EmailSetting} class serves as a centralize class to save and load t
 We can use the class with something like the following:
 
 ◊swift{
-  EmailSetting.sharedSetting.save("mak@example.com", from:"abc@example.com")
+  EmailSetting.sharedSetting.save(subject: "test@example.com", to: "test@example.com", from: "test@example.com")
   EmailSetting.sharedSetting.load()
 }

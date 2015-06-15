@@ -4,7 +4,7 @@
   <script src="//use.typekit.net/lyx0zwz.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Choosing between share and action extension | Modile Design Class</title>
+  <title>Step 3—A class for email settings | Modile Design Class</title>
   <link rel="stylesheet" href="/css/prism.css">
   <link rel="stylesheet" href="/css/reader.css">
 
@@ -29,20 +29,65 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Choosing between share and action extension</h1><p>Sometimes the <em>share</em> and <em>action</em> extension confuse us. There are subtle difference between share and action extension.</p><p><em>Action Extension</em> is for manipulating the input items and return the output. Link a function in programming language, or a service in Mac OS X.</p><p><em>Share Extension</em> is for sending out the input items.</p></root>
+      <root><h1>Step 3—A class for email settings</h1><ol><li>Create a new class file named <code>EmailSetting</code>.</li><li><p>Inside the file, add the following code:</p><pre><code class="language-swift">let EMAIL_TO_KEY = "EMAIL_TO_KEY"
+let EMAIL_FROM_KEY = "EMAIL_FROM_KEY"
+let EMAIL_SUBJECT_KEY = "EMAIL_SUBJECT_KEY"
+
+class EmailSetting: NSObject {
+  static let sharedSetting = EmailSetting()
+
+  func userDefaults() -&gt; NSUserDefaults {
+
+    let ud = NSUserDefaults(suiteName: "group.net.makzan.QuickMailMe")
+
+    if (ud != nil) {
+        return ud!
+    }
+
+    return NSUserDefaults.standardUserDefaults()
+  }
+
+  func save(subject subject:String, to toEmail:String, from fromEmail:String) {
+    userDefaults().setObject(subject, forKey: EMAIL_SUBJECT_KEY)
+    userDefaults().setObject(toEmail, forKey: EMAIL_TO_KEY)
+    userDefaults().setObject(fromEmail, forKey: EMAIL_FROM_KEY)
+    userDefaults().synchronize()
+  }
+
+  func load() -&gt; (String, String){
+    var to = userDefaults().stringForKey(EMAIL_TO_KEY)
+    var from = userDefaults().stringForKey(EMAIL_FROM_KEY)
+    var subject = userDefaults().stringForKey(EMAIL_SUBJECT_KEY)
+
+    if (to == nil) {
+        to = ""
+    }
+
+    if (from == nil) {
+        from = ""
+    }
+
+    if (subject == nil) {
+      subject = ""
+  }
+
+    return (subject!, to!, from!)
+  }
+}</code></pre></li></ol><h2 id="what-just-happened?"><a href="#what-just-happened?">What just happened?</a></h2><p>This <code>EmailSetting</code> class serves as a centralize class to save and load the input email setting.</p><p>We can use the class with something like the following:</p><pre><code class="language-swift">EmailSetting.sharedSetting.save(subject: "test@example.com", to: "test@example.com", from: "test@example.com")
+EmailSetting.sharedSetting.load()</code></pre></root>
     </article>
 
     <nav>
 
-      <a id="prev" href="/ios-app/mail-me/index.html">← Example Project—Mail Me</a>
+      <a id="prev" href="/ios-app/mail-me/step2-designing-the-ui.html">← Designing the UI</a>
 
-      <a id="next" href="/ios-app/mail-me/step2-designing-the-ui.html">Designing the UI →</a>
+      <a id="next" href="/ios-app/mail-me/step4-configuring-main-view-controller.html">Step 4—Configuring main view controller →</a>
     </nav>
 
 
-    <a href="/ios-app/mail-me/index.html" title="← Example Project—Mail Me" class="overlay prev">←</a>
+    <a href="/ios-app/mail-me/step2-designing-the-ui.html" title="← Designing the UI" class="overlay prev">←</a>
 
-    <a href="/ios-app/mail-me/step2-designing-the-ui.html" title="Designing the UI →" class="overlay next">→</a>
+    <a href="/ios-app/mail-me/step4-configuring-main-view-controller.html" title="Step 4—Configuring main view controller →" class="overlay next">→</a>
 
 
   </main>

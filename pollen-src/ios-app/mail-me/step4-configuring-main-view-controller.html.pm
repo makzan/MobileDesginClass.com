@@ -4,7 +4,7 @@
 
 ◊(steps
   ◊step{Open the ◊code{Main.storyboard} file with assistant editor showing the ◊code{ViewController.swift}. Connect the UITextField.}
-  ◊step{Link the UITextFields into the ◊code{ViewController.swift} as ◊code{toText} and ◊code{fromText}. Please also link the UIButton as ◊code{done} IBAction.}
+  ◊step{Link the UITextFields into the ◊code{ViewController.swift} as ◊code{toText}, ◊code{fromText} and ◊code{subjectText}. Please also link the UIButton as ◊code{done} IBAction.}
   ◊step{The ◊code{ViewController.swift} should become the following:
     ◊swift{
       import UIKit
@@ -13,12 +13,14 @@
 
         @IBOutlet weak var toText: UITextField!
         @IBOutlet weak var fromText: UITextField!
+        @IBOutlet weak var subjectText: UITextField!
 
         override func viewDidLoad() {
           super.viewDidLoad()
           // Do any additional setup after loading the view, typically from a nib.
 
-          let (to, from) = EmailSetting.sharedSetting.load()
+          let (subject, to, from) = EmailSetting.sharedSetting.load()
+          subjectText.text = subject
           toText.text = to
           fromText.text = from
         }
@@ -31,8 +33,9 @@
         @IBAction func done(sender: AnyObject) {
           toText.resignFirstResponder()
           fromText.resignFirstResponder()
+          subjectText.resignFirstResponder()
 
-          EmailSetting.sharedSetting.save(toText.text, fromEmail: fromText.text)
+          EmailSetting.sharedSetting.save(subject: subjectText.text, to: toText.text, from: fromText.text)
         }
       }
     }
