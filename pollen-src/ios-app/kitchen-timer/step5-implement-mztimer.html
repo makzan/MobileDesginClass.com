@@ -29,8 +29,8 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 5—Implementing MZTimer</h1><p>In this step, we implement the timer utility class. We call it <code>MZTimer</code>. It comes with a mutable companion—<code>MZMutableTimer</code>.</p><ol><li>Create a new class file named <code>MZTimer.swift</code>.</li><li>Create a new class file named <code>MZMutableTimer.swift</code>, which extends the <code>MZTimer</code> class.</li><li>We define the following string constant for the <code>NSUserDefaults</code> key.<pre><code class="language-swift">let TIMER_START_AT_KEY = "TimerStartedAt"
-let TIMER_DURATION_KEY = "TargetDuration"</code></pre></li><li>Then we implement the following <code>MZTimer</code> class.<pre><code class="language-swift">class MZTimer: NSObject {
+      <root><h1>Step 5—Implementing MZTimer</h1><p>In this step, we implement the timer utility class. We call it <code>MZTimer</code>. It comes with a mutable companion—<code>MZMutableTimer</code>.</p><ol><li>Create a new class file named <code>MZTimer.swift</code>.</li><li>Create a new class file named <code>MZMutableTimer.swift</code>, which extends the <code>MZTimer</code> class.</li><li><p>We define the following string constant for the <code>NSUserDefaults</code> key.</p><pre><code class="language-swift">let TIMER_START_AT_KEY = "TimerStartedAt"
+let TIMER_DURATION_KEY = "TargetDuration"</code></pre></li><li><p>Then we implement the following <code>MZTimer</code> class.</p><pre><code class="language-swift">class MZTimer: NSObject {
   static let sharedTimer = MZTimer()
 
   func sharedUserDefault() -&gt; NSUserDefaults {
@@ -72,7 +72,7 @@ let TIMER_DURATION_KEY = "TargetDuration"</code></pre></li><li>Then we implement
     let targetDuration = MZTimer.sharedTimer.targetDuration()
     return targetDuration - elapsedSeconds
   }
-}</code></pre></li><li>Then we implement the <code>MZMutableTimer</code> class which inherits the <code>MZTimer</code>. This class handles all the local notification’s scheduling and canceling.<pre><code class="language-swift">class MZMutableTimer: MZTimer {
+}</code></pre></li><li><p>Then we implement the <code>MZMutableTimer</code> class which inherits the <code>MZTimer</code>. This class handles all the local notification’s scheduling and canceling.</p><pre><code class="language-swift">class MZMutableTimer: MZTimer {
   static let sharedMutableTimer = MZMutableTimer()
 
   func scheduleAlertForSeconds(seconds:NSTimeInterval) {
@@ -98,7 +98,7 @@ let TIMER_DURATION_KEY = "TargetDuration"</code></pre></li><li>Then we implement
       cancelAlerts()
     }
   }
-}</code></pre></li><li>We want to reset the timer if the counting is done while the application is in background. In the <code>AppDelegate</code>, we tell the <code>MZMutableTimer</code> to reset any alerts if the count down has completed.<pre><code class="language-swift">func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
+}</code></pre></li><li><p>We want to reset the timer if the counting is done while the application is in background. In the <code>AppDelegate</code>, we tell the <code>MZMutableTimer</code> to reset any alerts if the count down has completed.</p><pre><code class="language-swift">func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
   // Override point for customization after application launch.
 
   MZMutableTimer.sharedMutableTimer.cancelAlertsIfZero()

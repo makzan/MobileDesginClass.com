@@ -1,9 +1,10 @@
 #lang pollen
 
-◊headline{Configuring main view controller}
+◊headline{Step 4—Configuring main view controller}
 
 ◊(steps
-  ◊step{Open the storyboard file with assistant editor showing the ◊code{ViewController.swift}. Connect the UITextField.}
+  ◊step{Open the ◊code{Main.storyboard} file with assistant editor showing the ◊code{ViewController.swift}. Connect the UITextField.}
+  ◊step{Link the UITextFields into the ◊code{ViewController.swift} as ◊code{toText} and ◊code{fromText}. Please also link the UIButton as ◊code{done} IBAction.}
   ◊step{The ◊code{ViewController.swift} should become the following:
     ◊swift{
       import UIKit
@@ -39,4 +40,6 @@
 )
 
 ◊section{What just happened?}
+
+We just linked the UI components to our logic in ◊code{ViewController.swift}. The values in this view are stored in the NSUserDefaults of the specific App Group. These values will then be used in the extension process.
 

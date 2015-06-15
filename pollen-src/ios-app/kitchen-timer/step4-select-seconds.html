@@ -29,7 +29,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 4—Select seconds to schedule</h1><ol><li>Add 2 IBActions. Link the <code>touchUpInside</code> event of buttons of +30s and -30s to <code>add30s</code> and <code>minus30s</code> method.</li><li><p>Let’s move to <code>ViewController.swift</code> file. Add the <code>seconds</code> instanc variable to the class.</p><pre><code class="language-swift">var seconds:NSTimeInterval = 0</code></pre></li><li>Implement the IBActions that manipulate the seconds value.<pre><code class="language-swift">// MARK: - Select seconds
+      <root><h1>Step 4—Select seconds to schedule</h1><ol><li>Add 2 IBActions. Link the <code>touchUpInside</code> event of buttons of +30s and -30s to <code>add30s</code> and <code>minus30s</code> method.</li><li><p>Let’s move to <code>ViewController.swift</code> file. Add the <code>seconds</code> instanc variable to the class.</p><pre><code class="language-swift">var seconds:NSTimeInterval = 0</code></pre></li><li><p>Implement the IBActions that manipulate the seconds value.</p><pre><code class="language-swift">// MARK: - Select seconds
 @IBAction func add30s(sender: AnyObject) {
   seconds += 30
 }

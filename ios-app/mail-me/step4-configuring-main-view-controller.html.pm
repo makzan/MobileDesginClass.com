@@ -40,3 +40,5 @@
 
 ◊section{What just happened?}
 
+We just linked the UI components to our logic in ◊code{ViewController.swift}. The values in this view are stored in the NSUserDefaults of the specific App Group. These values will then be used in the extension process.
+

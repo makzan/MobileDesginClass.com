@@ -29,7 +29,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Pull to refresh with UIRefreshControl</h1><p>Step 1: Enable the <em>Refreshing</em> option in any <code>UIScrollView</code> in Storyboard.</p><figure><img src="http://makzan.net/assets/ios-dev-scrapbook/table-view-refreshing-enabled-8c1dbb2ed1734edcd6a38345409a997e.png" alt="Table view refreshing enabled in Storyboard." /><figcaption>Table view refreshing enabled in Storyboard.</figcaption></figure><p>Step 2: Setup the refresh logic that tracks the <code>UIControlEventValueChanged</code> event:</p><pre><code class="language-objectivec">[self.refreshControl addTarget:self
+      <root><h1>Pull to refresh with UIRefreshControl</h1><p>Step 1: Enable the <em>Refreshing</em> option in any <code>UIScrollView</code> in Storyboard.</p><figure><p><img src="http://makzan.net/assets/ios-dev-scrapbook/table-view-refreshing-enabled-8c1dbb2ed1734edcd6a38345409a997e.png" alt="Table view refreshing enabled in Storyboard." /></p><figcaption>Table view refreshing enabled in Storyboard.</figcaption></figure><p>Step 2: Setup the refresh logic that tracks the <code>UIControlEventValueChanged</code> event:</p><pre><code class="language-objectivec">[self.refreshControl addTarget:self
                         action:@selector(refreshNews:)
               forControlEvents:UIControlEventValueChanged];</code></pre><p>Step 3: Implement the selector with logic that’s executed when user pulls and refreshes the view.</p><pre><code class="language-objectivec">- (void) refreshNews: (id)selector {
   // logic here to refresh the table view.

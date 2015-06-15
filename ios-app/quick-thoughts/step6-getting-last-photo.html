@@ -29,7 +29,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 6—Getting last photo</h1><p>In this step, we allow the user to share the last photo along with the text.</p><ol><li>In the interface builder, add a <em>Long Press</em> gesture recognizer to the save button.</li><li>To use the PhotoKit, we need to import the framework at the beginning of the file. After the existing <code>import UIKit</code> line, add the following line:<pre><code class="language-swift">import Photos</code></pre></li><li>We implement the following function to get the last photo.<pre><code class="language-swift">// MARK: - Get Last Photo
+      <root><h1>Step 6—Getting last photo</h1><p>In this step, we allow the user to share the last photo along with the text.</p><ol><li>In the interface builder, add a <em>Long Press</em> gesture recognizer to the save button.</li><li><p>To use the PhotoKit, we need to import the framework at the beginning of the file. After the existing <code>import UIKit</code> line, add the following line:</p><pre><code class="language-swift">import Photos</code></pre></li><li><p>We implement the following function to get the last photo.</p><pre><code class="language-swift">// MARK: - Get Last Photo
 func getLastPhoto(completion:(image:UIImage)-&gt;Void) {
   let fetchOptions = PHFetchOptions()
   fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
@@ -51,7 +51,7 @@ func getLastPhoto(completion:(image:UIImage)-&gt;Void) {
     NSLog("photo: %@", photo!)
     completion(image: photo!)
   })
-}</code></pre></li><li>Link the Long Press action to the <code>ViewController.swift</code> as IBAction <code>longPressSaveThought:</code>.</li><li>Then we implement the long press gesture handler.<pre><code class="language-swift"> @IBAction func longPressSaveThought(sender: AnyObject) {
+}</code></pre></li><li>Link the Long Press action to the <code>ViewController.swift</code> as IBAction <code>longPressSaveThought:</code>.</li><li><p>Then we implement the long press gesture handler.</p><pre><code class="language-swift"> @IBAction func longPressSaveThought(sender: AnyObject) {
   // ask if want to include the last photo
   let alertView = UIAlertController(title: "Save Thought", message: "Do you want to include the last image in Photo Library?", preferredStyle: UIAlertControllerStyle.ActionSheet)
 

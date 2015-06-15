@@ -29,7 +29,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Handling keyboard size changes</h1><p>We assumed you’re using Autolayout and you have created a constraint named <code>bottomMargin</code> which is distance between bottom of save button and bottom of the view controller.</p><ol><li>In the <code>ViewController.swift</code> file, add the following code:<pre><code class="language-swift">// MARK: - Keyboard events
+      <root><h1>Handling keyboard size changes</h1><p>We assumed you’re using Autolayout and you have created a constraint named <code>bottomMargin</code> which is distance between bottom of save button and bottom of the view controller.</p><ol><li><p>In the <code>ViewController.swift</code> file, add the following code:</p><pre><code class="language-swift">// MARK: - Keyboard events
 
 func registerKeyboardEvents() {
 
@@ -47,7 +47,7 @@ func keyboardShows(notification:NSNotification) {
 func keyboardHides(notification:NSNotification) {
   self.bottomMargin.constant = 0
   self.view.layoutIfNeeded()
-}</code></pre></li><li>Then we call the keyboard events in the <code>viewDidLoad</code> function. We also focus on the text view by default, which shows the keyboard right after the app launches.<pre><code class="language-swift">override func viewDidLoad() {
+}</code></pre></li><li><p>Then we call the keyboard events in the <code>viewDidLoad</code> function. We also focus on the text view by default, which shows the keyboard right after the app launches.</p><pre><code class="language-swift">override func viewDidLoad() {
   super.viewDidLoad()
   registerKeyboardEvents()
   mainTextView.becomeFirstResponder()

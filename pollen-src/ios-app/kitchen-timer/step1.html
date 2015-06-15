@@ -29,7 +29,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 1</h1><p>In this step, we create the basic user interface.</p><ol><p><li>Download the images from the <a href="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Interfaces%20for%20Kitchen%20Timer.zip">this link</a>.</li><br /><li>Crate new XCode project, with <em>swift</em> and <em>universal</em> option</li></p><p><aside><figure><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-17%20at%209.10.50%20PM.png" alt="Main.storyboard" /><figcaption>Main.storyboard</figcaption></figure></aside><li>Setup the interface like the following.</li></p><p><li><p>Create outlet.</p><pre><code class="language-swift">@IBOutlet weak var startButton: UIButton!
+      <root><h1>Step 1</h1><p>In this step, we create the basic user interface.</p><ol><p><li>Download the images from the <a href="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Interfaces%20for%20Kitchen%20Timer.zip">this link</a>.</li><br /><li>Crate new XCode project, with <em>swift</em> and <em>universal</em> option</li></p><aside><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-17%20at%209.10.50%20PM.png" alt="Main.storyboard" /></p><figcaption>Main.storyboard</figcaption></figure></aside><p><li>Setup the interface like the following.</li></p><p><li><p>Create outlet.</p><pre><code class="language-swift">@IBOutlet weak var startButton: UIButton!
 @IBOutlet weak var stopButton: UIButton!</code></pre></li><br /><li><p>Define 2 functions that controls the interface visibility.</p><pre><code class="language-swift">// MARK - UI Visibility
 
 func showRunningUI() {
@@ -46,7 +46,7 @@ func showPrepareUI() {
 
 @IBAction func cancelTimer(sender: AnyObject) {
     showPrepareUI()
-}</code></pre></li><br /><li>At last, we setup the interface at the viewDidLoad<pre><code class="language-swift">override func viewDidLoad() {
+}</code></pre></li><br /><li><p>At last, we setup the interface at the viewDidLoad</p><pre><code class="language-swift">override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     showPrepareUI()

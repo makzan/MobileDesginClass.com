@@ -29,8 +29,8 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 3—Saving text locally</h1><p>We want to save the text locally before saving the text into other services. We monitor the content change of the text view and save the text locally.</p><ol><li>Make sure we have set the delegate of the <code>UITextView</code> to the <code>ViewController</code>.</li><li>Since we have set the delegate, we need to include the <code>UITextViewDelegate</code> in the class header line. The <code>ViewController</code> class declaration becomes the following:<br />  <pre><code class="language-swift">  class ViewController: UIViewController, UITextViewDelegate {
-}</code></pre><li>At the beginning of the <code>ViewController.swift</code> file, we add the following constant.<pre><code class="language-swift">let SAVED_TEXT_KEY = "SAVED_TEXT_KEY"</code></pre></li><br /><li>Somewhere in the code, we addd the following block of logic:<pre><code class="language-swift">// MARK: - TextView Content
+      <root><h1>Step 3—Saving text locally</h1><p>We want to save the text locally before saving the text into other services. We monitor the content change of the text view and save the text locally.</p><ol><li>Make sure we have set the delegate of the <code>UITextView</code> to the <code>ViewController</code>.</li><li><p>Since we have set the delegate, we need to include the <code>UITextViewDelegate</code> in the class header line. The <code>ViewController</code> class declaration becomes the following:<br /></p><pre><code class="language-swift">  class ViewController: UIViewController, UITextViewDelegate {
+}</code></pre><p><li><p>At the beginning of the <code>ViewController.swift</code> file, we add the following constant.</p><pre><code class="language-swift">let SAVED_TEXT_KEY = "SAVED_TEXT_KEY"</code></pre></li><br /><li><p>Somewhere in the code, we addd the following block of logic:</p><pre><code class="language-swift">// MARK: - TextView Content
 
 func initTextViewContent() {
   self.mainTextView.text = ""
@@ -46,7 +46,7 @@ func textViewDidChange(textView: UITextView) {
   // save to NSUserDefault until save.
   let userDefault = NSUserDefaults.standardUserDefaults()
   userDefault.setObject(textView.text, forKey: SAVED_TEXT_KEY)
-}</code></pre></li><br /><li>Then we update the <code>viewDidLoad</code> method to call the <code>initTextViewContent</code> function.</li><br />  <pre><code class="language-swift">override func viewDidLoad() {
+}</code></pre></li><br /><li>Then we update the <code>viewDidLoad</code> method to call the <code>initTextViewContent</code> function.</li><br /></p><pre><code class="language-swift">override func viewDidLoad() {
   super.viewDidLoad()
   // Do any additional setup after loading the view, typically from a nib.
 

@@ -10,4 +10,4 @@ We’ll learn the following:
 - POST to API with AlamoFire
 - Sending mail using MailGun service
 
-It uses the AlamoFire library to access the MailGun API to send email.
+It uses the AlamoFire library to access the MailGun API to send email. You will need to download the library source code. You may also sign up a free account on MailGun website.

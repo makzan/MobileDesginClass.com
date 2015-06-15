@@ -29,10 +29,10 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 9—Handling notification event</h1><ol><li>We handle the +30s action.<pre><code class="language-swift">func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -&gt; Void) {
+      <root><h1>Step 9—Handling notification event</h1><ol><li><p>We handle the +30s action.</p><pre><code class="language-swift">func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -&gt; Void) {
 
   MZMutableTimer.sharedMutableTimer.scheduleAlertForSeconds(30.0)
-}</code></pre></li><li>At last, we handle the notification when the app in running in foreground.<pre><code class="language-swift">// MARK: Notification Registration
+}</code></pre></li><li><p>At last, we handle the notification when the app in running in foreground.</p><pre><code class="language-swift">// MARK: Notification Registration
 func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
 
   MZMutableTimer.sharedMutableTimer.cancelAlerts()
@@ -45,7 +45,7 @@ func application(application: UIApplication, didReceiveLocalNotification notific
   }))
 
   UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-}</code></pre></li></ol><div><h2 id="by-the-way"><a href="#by-the-way">By the way</a></h2><li>The notification action actually works in Apple Watch automatically:<figure><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/IMG_4564.PNG" alt="Controling notification actions in Apple Watch." /><figcaption>Controling notification actions in Apple Watch.</figcaption></figure></li></div></root>
+}</code></pre></li></ol><div><h2 id="by-the-way"><a href="#by-the-way">By the way</a></h2><p><li><p>The notification action actually works in Apple Watch automatically:</p><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/IMG_4564.PNG" alt="Controling notification actions in Apple Watch." /></p><figcaption>Controling notification actions in Apple Watch.</figcaption></figure></li></p></div></root>
     </article>
 
     <nav>

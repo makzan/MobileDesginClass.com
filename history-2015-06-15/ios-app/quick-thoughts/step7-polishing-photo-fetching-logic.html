@@ -29,7 +29,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
     </header>
 
     <article>
-      <root><h1>Step 7—Polishing photo fetching logic</h1><p>We built all the core logic to make the app works. Now we want to polish the photo fetching logic.</p><ol><li>We define an instant variable that stores the pre-fetched last photo.<pre><code class="language-swift">var lastPhoto: UIImage?</code></pre></li><li>We prepare a function to ask for the permission.<pre><code class="language-swift">func askForPhotoPremission() {
+      <root><h1>Step 7—Polishing photo fetching logic</h1><p>We built all the core logic to make the app works. Now we want to polish the photo fetching logic.</p><ol><li><p>We define an instant variable that stores the pre-fetched last photo.</p><pre><code class="language-swift">var lastPhoto: UIImage?</code></pre></li><li><p>We prepare a function to ask for the permission.</p><pre><code class="language-swift">func askForPhotoPremission() {
   PHPhotoLibrary.requestAuthorization { (status) -&gt; Void in
     if (status == .Authorized) {
       NSOperationQueue.mainQueue().addOperationWithBlock {
@@ -37,19 +37,19 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
       }
     }
   }
-}</code></pre></li><li>We want to preload the photo. Define the following function:<pre><code class="language-swift">func preloadLastPhoto() {
+}</code></pre></li><li><p>We want to preload the photo. Define the following function:</p><pre><code class="language-swift">func preloadLastPhoto() {
   if PHPhotoLibrary.authorizationStatus() == .Authorized {
     self.getLastPhoto({ (image) -&gt; Void in
       self.lastPhoto = image
     })
   }
-}</code></pre></li><li>One more step. The last photo may have changed since<pre><code class="language-swift">func handlePhotoChanges() {
+}</code></pre></li><li><p>One more step. The last photo may have changed since</p><pre><code class="language-swift">func handlePhotoChanges() {
   if PHPhotoLibrary.authorizationStatus() == .Authorized {
     PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
   }
-}</code></pre></li><li>Add the protocol to the class header. The header becomes:<pre><code class="language-swift">class ViewController: UIViewController, UITextViewDelegate, PHPhotoLibraryChangeObserver</code></pre></li><li>Implement the <code>photoLibraryDidChange</code> function.<pre><code class="language-swift">func photoLibraryDidChange(changeInstance: PHChange) {
+}</code></pre></li><li><p>Add the protocol to the class header. The header becomes:</p><pre><code class="language-swift">class ViewController: UIViewController, UITextViewDelegate, PHPhotoLibraryChangeObserver</code></pre></li><li><p>Implement the <code>photoLibraryDidChange</code> function.</p><pre><code class="language-swift">func photoLibraryDidChange(changeInstance: PHChange) {
   self.preloadLastPhoto()
-}</code></pre></li><li>In the <code>viewDidLoad</code>, we add the functions we just created. The <code>viewDidLoad</code> becomes the following:<pre><code class="language-swift">override func viewDidLoad() {
+}</code></pre></li><li><p>In the <code>viewDidLoad</code>, we add the functions we just created. The <code>viewDidLoad</code> becomes the following:</p><pre><code class="language-swift">override func viewDidLoad() {
   super.viewDidLoad()
   // Do any additional setup after loading the view, typically from a nib.
 
@@ -64,7 +64,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
   preloadLastPhoto()
 
   handlePhotoChanges()
-}</code></pre></li><li>Now in the <code>longPressSaveThought</code> function, after user selects “Save with Last Photo”, we don’t fetch the photo anymore, instead, we use it:<pre><code class="language-swift">if (self.lastPhoto == nil) {
+}</code></pre></li><li><p>Now in the <code>longPressSaveThought</code> function, after user selects “Save with Last Photo”, we don’t fetch the photo anymore, instead, we use it:</p><pre><code class="language-swift">if (self.lastPhoto == nil) {
   if PHPhotoLibrary.authorizationStatus() == .Authorized {
     self.promptForPhotoFailing()
   }else {
@@ -73,7 +73,7 @@ mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
 
 } else {
   self.shareItems([self.mainTextView.text, self.lastPhoto!])
-}</code></pre></li><li>The <code>promptForPhotoFailing</code> and <code>promptForApprovalAgain</code> is 2 functions that prompts the user that photo fetching fails.<pre><code class="language-swift">func promptForApprovalAgain() {
+}</code></pre></li><li><p>The <code>promptForPhotoFailing</code> and <code>promptForApprovalAgain</code> is 2 functions that prompts the user that photo fetching fails.</p><pre><code class="language-swift">func promptForApprovalAgain() {
   let alertView = UIAlertController(title: "Photo Access", message: "The app needs your approval to access the last photo. Please enable it at Settings &gt; Privacy &gt; Photos", preferredStyle: UIAlertControllerStyle.Alert)
   alertView.addAction(UIAlertAction(title: "I understand", style: UIAlertActionStyle.Cancel, handler: nil))
   self.presentViewController(alertView, animated: true, completion: nil)
