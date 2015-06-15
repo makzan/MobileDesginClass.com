@@ -11,6 +11,7 @@ In this section, we will explore different examples that introduces essential iO
 
 ◊section{Advanced topics}
 ◊(toclist
-  ◊tocitem["/ios-app/kitchen-timer/"]{2.1 Kitchen Timer}
-  ◊tocitem["/ios-app/quick-thoughts/"]{2.2 Quick Thoughts}
+  ◊tocitem["/ios-app/kitchen-timer/"]{Kitchen Timer}
+  ◊tocitem["/ios-app/quick-thoughts/"]{Quick Thoughts}
+  ◊tocitem["/ios-app/mail-me/"]{Mail Me}
 )

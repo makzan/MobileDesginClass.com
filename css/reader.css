@@ -408,3 +408,13 @@ iframe {
   padding: 1em;
   min-width: 0;
 }
+
+/* Ordered list */
+ol {
+    list-style-type: none;
+    counter-reset: item;
+}
+li:before {
+    content: counters(item, ".")". ";
+    counter-increment: item
+}

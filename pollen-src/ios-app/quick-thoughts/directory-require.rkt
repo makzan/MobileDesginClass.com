@@ -35,7 +35,7 @@
 (define (step . content) `(li,@ content))
 
 (define toclist (make-default-tag-function 'ol))
-(define (tocitem url text) `(li  (a [[href, url]], text) ) )
+(define (tocitem url . text) `(li  (a [[href, url]],@ text) ) )
 
 (define (objc . text) `(pre (code [[class, "language-objectivec"]],@ text)))
 (define (swift . text) `(pre (code [[class, "language-swift"]],@ text)))

@@ -1,6 +1,6 @@
 #lang pollen
 
-◊headline{Quick Thoughts}
+◊headline{Example Project—Quick Thoughts}
 
 In this example, we’re going to build a notes taking app.
 

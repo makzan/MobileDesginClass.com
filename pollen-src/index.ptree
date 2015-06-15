@@ -2,8 +2,6 @@
 
 index.html
 ◊ios-app/index.html{
-  ios-app/example-1.html
-  ios-app/pragma-mark.html
   ◊ios-app/kitchen-timer/index.html{
     ios-app/kitchen-timer/step1.html
     ios-app/kitchen-timer/step2-auto-layout.html
@@ -26,6 +24,13 @@ index.html
     ios-app/quick-thoughts/step7-polishing-photo-fetching-logic.html
     ios-app/quick-thoughts/final-source-code.html
   }
+  ◊ios-app/mail-me/index.html{
+    ios-app/mail-me/step1-choosing-between-share-and-action-extension.html
+  }
+  ◊ios-app/secrets/index.html{
+    ios-app/secrets/step1-prototyping-in-storyboard.html
+  }
+  ios-app/pragma-mark.html
   ios-app/pull-to-refresh.html
   ios-app/apple-watch.html
   ios-app/summary.html
