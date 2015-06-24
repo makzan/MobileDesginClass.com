@@ -46,7 +46,7 @@
 
           if (subject == nil) {
             subject = ""
-        }
+          }
 
           return (subject!, to!, from!)
         }
