@@ -410,11 +410,11 @@ iframe {
 }
 
 /* Ordered list */
-ol {
+/*ol {
     list-style-type: none;
     counter-reset: item;
 }
 li:before {
     content: counters(item, ".")". ";
     counter-increment: item
-}
+}*/
