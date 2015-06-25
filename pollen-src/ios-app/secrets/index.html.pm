@@ -14,10 +14,10 @@ What we will learn:
 ◊(define (local text) (string-append base text))
 
 Step 1: ◊link[(local "step1-prototyping-in-storyboard.html")]{Prototyping the app in Storyboard}
-Step 1: ◊link[(local "step2-installing-parse.html")]{Installing Parse}
-Step 1: ◊link[(local "step3-secrets-model.html")]{Implement the Secrets model}
-Step 1: ◊link[(local "step4-initialize-parse.html")]{Initialize Parse}
-Step 1: ◊link[(local "step5-html-show-secret.html")]{HTML showing secrets}
-Step 1: ◊link[(local "step6-view-controller.html")]{View Controller}
-Step 1: ◊link[(local "step7-compose-secret.html")]{Compose Secrets}
-Step 1: ◊link[(local "step8-admin.html")]{Admin panel}
+Step 2: ◊link[(local "step2-installing-parse.html")]{Installing Parse}
+Step 3: ◊link[(local "step3-secrets-model.html")]{Implement the Secrets model}
+Step 4: ◊link[(local "step4-initialize-parse.html")]{Initialize Parse}
+Step 5: ◊link[(local "step5-html-show-secret.html")]{HTML showing secrets}
+Step 6: ◊link[(local "step6-view-controller.html")]{View Controller}
+Step 7: ◊link[(local "step7-compose-secret.html")]{Compose Secrets}
+Step 8: ◊link[(local "step8-admin.html")]{Admin panel}
