@@ -14,6 +14,7 @@ Why there are 3 topics? It’s because they are deeply connected. If you want to
     ◊tocitem["/ios-app/kitchen-timer/"]{Kitchen Timer}
     ◊tocitem["/ios-app/quick-thoughts/"]{Quick Thoughts}
     ◊tocitem["/ios-app/mail-me/"]{Mail Me}
+    ◊tocitem["/ios-app/secrets/"]{Secrets}
   )
 }
 ◊tocitem["/mobile-web/"]{Mobile Web Design}

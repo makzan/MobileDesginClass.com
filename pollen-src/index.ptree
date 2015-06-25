@@ -36,6 +36,13 @@ index.html
   }
   ◊ios-app/secrets/index.html{
     ios-app/secrets/step1-prototyping-in-storyboard.html
+    ios-app/secrets/step2-installing-parse.html
+    ios-app/secrets/step3-secrets-model.html
+    ios-app/secrets/step4-initialize-parse.html
+    ios-app/secrets/step5-html-show-secret.html
+    ios-app/secrets/step6-view-controller.html
+    ios-app/secrets/step7-compose-secret.html
+    ios-app/secrets/step8-admin.html
   }
   ios-app/pragma-mark.html
   ios-app/pull-to-refresh.html

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="//use.typekit.net/lyx0zwz.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Step 8—Creating today extension | Modile Design Class</title>
+  <link rel="stylesheet" href="/css/prism.css">
+  <link rel="stylesheet" href="/css/reader.css">
+
+  <!-- Typekit -->
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("4d280a20e4ff4df18ea40eb616429130");</script><!-- end Mixpanel -->
+</head>
+<body>
+  <main id="main">
+    <header>
+      <p>
+        <a id="chapter" href="/ios-app/kitchen-timer/index.html">Example Project—Kitchen Timer</a>
+
+
+      </p>
+      <p>
+        <a href='/'>Mobile Design Class</a>
+      </p>
+    </header>
+
+    <article>
+      <root><h1>Step 8—Creating today extension</h1><p>In this step, we create an extension for the app. We allow user to schedule a new timer via the today extension panel. We discuss how the extension app can share the same user defaults from the main app. We also go through how the extension invokes the main application.</p><ol><li><p>Create a new target from the project.</p><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-28%20at%202.07.33%20PM.png" alt="New target" /></p><figcaption>New target</figcaption></figure></li><li><p>Choose <em>Today Extension</em>.</p><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-28%20at%202.07.46%20PM.png" alt="Today Extension" /></p><figcaption>Today Extension</figcaption></figure><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-28%20at%202.08.03%20PM.png" alt="Give the extension a name" /></p><figcaption>Give the extension a name</figcaption></figure></li><li><p>Then we design the interface for the Today extension. Make the interface like the following. The label is linked as <code>countDownLabel</code> IBOutlet. The buttons are linked as <code>add30s</code>, <code>minus30s</code> and <code>start</code> IBActions correspondingcally.</p><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-28%20at%202.45.01%20PM.png" alt="Interface for today extension" /></p><figcaption>Interface for today extension</figcaption></figure></li><li><p>There is a left margin on the view content in today extension by default. We can reset this margin by using the following delegate method:</p><pre><code class="language-swift">func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -&gt; UIEdgeInsets {
+  return UIEdgeInsetsZero
+}</code></pre></li><li><aside><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-28%20at%202.28.28%20PM.png" alt="Xcode is loading the developer profile through internet" /></p><figcaption>Xcode is loading the developer profile through internet</figcaption></figure></aside><p>For both parent app and the today extension app, we need to add them into the same App Group. The App Group is actually configured on Apple’s developer center. So Xcode may ask for your developer profile when turing this setting on. Choose a unique app group ID and use it in both parent app and today extension target.</p><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-28%20at%202.29.28%20PM.png" alt="Setting App Group" /></p><figcaption>Setting App Group</figcaption></figure></li><li><p>In the <code>MZTimer.swift</code> file, we change the user default to the following, which specify the app group that we configured.</p><pre><code class="language-swift">func sharedUserDefault() -&gt; NSUserDefaults {
+  return NSUserDefaults(suiteName: "group.net.makzan.KitchenTimer-Swift")!
+}</code></pre></li><li><p>TodayViewController.swift:</p><pre><code class="language-swift">@IBOutlet weak var countDownLabel: UILabel!</code></pre></li><li><p>Define an instant variable in the extension class.</p><pre><code class="language-swift">var seconds:NSTimeInterval = 0</code></pre></li><li><p>The <code>add30s</code> and <code>minus30s</code> has the same logic as the main app.</p><pre><code class="language-swift">// MARK: - IBActions
+
+@IBAction func add30s(sender: AnyObject) {
+  seconds += 30
+}
+@IBAction func minus30s(sender: AnyObject) {
+  seconds = max(seconds-30, 0) // minus 30, minimun 0.
+}</code></pre></li><li><p>The interface timer is same as the main app.</p><pre><code class="language-swift">// MARK: - Timer interface
+func startUITimer() {
+  let timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: "tick", userInfo: nil, repeats: true)
+}
+
+func tick() {
+  // only tick the UI timer when the MZTimer is running for any local notification.
+  if (!MZTimer.sharedTimer.isRunning()) {
+    countDownLabel.text = (seconds as NSNumber).stringOfMinutesSeconds() as String
+    return
+  }
+
+  let remainSeconds:NSNumber = MZTimer.sharedTimer.remainSeconds()
+
+  countDownLabel.text = remainSeconds.stringOfMinutesSeconds() as String
+}</code></pre></li><li><p>Next, we create a connection between the extension and the main application. We do that by using the application URL scheme. Configure the main app with the following URL type.</p><aside>Note: You may want to choose a different URL scheme because this scheme shares among all the iOS apps installed in the device.</aside><figure><p><img src="https://dl.dropboxusercontent.com/u/3079250/Public%20for%20MobileDesignClass/ios/Screen%20Shot%202015-05-28%20at%202.16.08%20PM.png" alt="Setting URL scheme in the main app" /></p><figcaption>Setting URL scheme in the main app</figcaption></figure></li><li><p>When user presses <em>start</em> button in the extension, it actually launches the parent app by calling URL. Extension cannot invoke NSLocalNotification directly.</p><pre><code class="language-swift">@IBAction func start(sender: AnyObject) {
+  let urlString = NSString(format: "mz-kitchentimer://%.0f", seconds) as String
+  let url = NSURL(string: urlString)
+  extensionContext?.openURL(url!, completionHandler: nil)
+}</code></pre></li><li><p>Let’s move to the main app’s <code>AppDelegate.swift</code> file. In the parent app, we handle the URL launching by using the <code>application:handleOpenURL:</code> method. Inside the method, we capture the URL, which is the <em>seconds</em> passes from the extension. Then we setup a new timer from the value.</p><pre><code class="language-swift">func application(application: UIApplication, handleOpenURL url: NSURL) -&gt; Bool {
+  if (url.host != nil) {
+    let seconds = (url.host! as NSString).doubleValue
+    MZMutableTimer.sharedMutableTimer.scheduleAlertForSeconds(seconds)
+  }
+  return true
+}</code></pre></li></ol></root>
+    </article>
+
+    <nav>
+
+      <a id="prev" href="/ios-app/kitchen-timer/step7-timer-format.html">← Step 7—Timer Format</a>
+
+      <a id="next" href="/ios-app/kitchen-timer/step9-handling-notification-event.html">Step 9—Handling notification event →</a>
+    </nav>
+
+
+    <a href="/ios-app/kitchen-timer/step7-timer-format.html" title="← Step 7—Timer Format" class="overlay prev">←</a>
+
+    <a href="/ios-app/kitchen-timer/step9-handling-notification-event.html" title="Step 9—Handling notification event →" class="overlay next">→</a>
+
+
+  </main>
+
+  <footer>
+    <small><a href='/'>Mobile Design Class</a>. &copy; 2015 by Makzan. All rights reserved.</small>
+  </footer>
+
+  <div id='overlay' class='out'>
+    <img id='overlay-img' src=''>
+    <div id='overlay-caption'></div>
+  </div>
+
+  <!-- © 2015 Thomas Seng Hin Mak. -->
+
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="/js/smoothstate.js"></script>
+  <script src="/js/prism.min.js"></script>
+  <script src="/js/website.js"></script>
+</body>
+</html>
