@@ -14,4 +14,5 @@ In this section, we will explore different examples that introduces essential iO
   ◊tocitem["/ios-app/kitchen-timer/"]{Kitchen Timer}
   ◊tocitem["/ios-app/quick-thoughts/"]{Quick Thoughts}
   ◊tocitem["/ios-app/mail-me/"]{Mail Me}
+  ◊tocitem["/ios-app/secrets/"]{Secrets}
 )
